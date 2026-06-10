@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { User, ShoppingBag, MapPin, Bell, Key, Settings, Sparkles } from 'lucide-react';
+import { User, ShoppingBag, MapPin, Bell } from 'lucide-react';
 
 export default function AccountPage() {
   const [activeTab, setActiveTab] = useState<'profile' | 'orders' | 'addresses' | 'notifications'>('profile');
@@ -23,6 +23,13 @@ export default function AccountPage() {
     { id: 1, type: 'Home', text: 'Flat 402, Shiv Shakti Tower, Katrap Road, Badlapur East, Maharashtra 421503' },
     { id: 2, type: 'Office', text: 'Shop 4, Kartik Complex, Near Municipal Corporation, Badlapur East, Maharashtra 421503' }
   ];
+
+  const tabs = [
+    { id: 'profile', label: 'My Profile', icon: <User size={16} /> },
+    { id: 'orders', label: 'Order History', icon: <ShoppingBag size={16} /> },
+    { id: 'addresses', label: 'Saved Addresses', icon: <MapPin size={16} /> },
+    { id: 'notifications', label: 'Notifications', icon: <Bell size={16} /> }
+  ] as const;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -48,15 +55,10 @@ export default function AccountPage() {
           </div>
 
           <nav className="flex flex-col space-y-1">
-            {[
-              { id: 'profile', label: 'My Profile', icon: <User size={16} /> },
-              { id: 'orders', label: 'Order History', icon: <ShoppingBag size={16} /> },
-              { id: 'addresses', label: 'Saved Addresses', icon: <MapPin size={16} /> },
-              { id: 'notifications', label: 'Notifications', icon: <Bell size={16} /> }
-            ].map((tab) => (
+            {tabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() => setActiveTab(tab.id)}
                 className={`w-full text-left py-2.5 px-4 rounded-xl text-sm font-semibold flex items-center space-x-2.5 transition-all cursor-pointer ${
                   activeTab === tab.id 
                     ? 'bg-primary text-white shadow-md' 

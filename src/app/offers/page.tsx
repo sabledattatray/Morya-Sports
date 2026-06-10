@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { Sparkles, Star, Tag, Timer, AlertCircle, ShoppingCart } from 'lucide-react';
+import { Sparkles, Tag, Timer } from 'lucide-react';
 import { PRODUCTS } from '../../data/mockData';
 import ProductCard from '../../components/ProductCard';
 

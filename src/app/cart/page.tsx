@@ -21,7 +21,8 @@ export default function CartPage() {
   const [mounted, setMounted] = useState(false);
 
   React.useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const [couponCode, setCouponCode] = useState('');
@@ -51,19 +52,16 @@ export default function CartPage() {
 
   const handleApplyCoupon = (e: React.FormEvent) => {
     e.preventDefault();
-    const code = couponCode.trim().toUpperCase();
-    if (code === 'SPORTS10') {
+    if (couponCode.toUpperCase() === 'SPORTS10') {
       setDiscountPercent(10);
       setCouponApplied(true);
       setCouponError('');
-    } else if (code === 'TEAM20') {
+    } else if (couponCode.toUpperCase() === 'TEAM20') {
       setDiscountPercent(20);
       setCouponApplied(true);
       setCouponError('');
     } else {
-      setCouponError('Invalid coupon code. Try "SPORTS10" or "TEAM20".');
-      setCouponApplied(false);
-      setDiscountPercent(0);
+      setCouponError('Invalid coupon code');
     }
   };
 
@@ -74,8 +72,8 @@ export default function CartPage() {
 
   if (!mounted) {
     return (
-      <div className="flex justify-center items-center py-32">
-        <span className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin"></span>
+      <div className="max-w-7xl mx-auto px-4 py-24 text-center">
+        <div className="animate-pulse text-sm text-[var(--muted)]">Loading cart...</div>
       </div>
     );
   }
@@ -88,7 +86,7 @@ export default function CartPage() {
         </div>
         <div>
           <h1 className="text-3xl font-poppins font-extrabold text-[var(--foreground)]">Your Cart is Empty</h1>
-          <p className="text-sm text-[var(--muted)] mt-2">Looks like you haven't added any sports items to your basket yet.</p>
+          <p className="text-sm text-[var(--muted)] mt-2">{"Looks like you haven't added any sports items to your basket yet."}</p>
         </div>
         <Link href="/shop" className="inline-block px-8 py-3.5 bg-primary hover:bg-primary-hover text-white rounded-2xl font-bold transition-all shadow-md">
           Explore Sports Catalog
@@ -211,7 +209,7 @@ export default function CartPage() {
                       Custom Note Preview
                     </div>
                     <p className="font-serif italic font-extrabold text-primary-playful text-base min-h-[40px] leading-relaxed break-words px-4 pt-1 text-center">
-                      "{globalCardMsg || 'All the best! Play like a champion!'}"
+                      &ldquo;{globalCardMsg || 'All the best! Play like a champion!'}&rdquo;
                     </p>
                   </div>
                 </div>
@@ -263,7 +261,7 @@ export default function CartPage() {
             {couponError && (
               <p className="mt-2 text-xs text-primary font-bold">{couponError}</p>
             )}
-            <p className="mt-3 text-[10px] text-[var(--muted)]">Try "SPORTS10" for 10% off or "TEAM20" for 20% off.</p>
+            <p className="mt-3 text-[10px] text-[var(--muted)]">Try &quot;SPORTS10&quot; for 10% off or &quot;TEAM20&quot; for 20% off.</p>
           </div>
 
           {/* Checkout summary */}

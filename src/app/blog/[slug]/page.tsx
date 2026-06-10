@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Calendar, Clock, ChevronRight, User } from 'lucide-react';
+import { Calendar, Clock, ChevronRight, User } from 'lucide-react';
 import { BLOGS } from '../../../data/mockData';
 import { Metadata } from 'next';
 

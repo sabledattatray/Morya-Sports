@@ -147,16 +147,16 @@ export default function AdminPage() {
 
         {/* Tab triggers */}
         <div className="flex flex-wrap gap-2 p-1.5 bg-[var(--card)] border border-[var(--border)] rounded-2xl">
-          {[
+          {([
             { id: 'analytics', label: 'Analytics', icon: <BarChart3 size={14} /> },
             { id: 'products', label: 'Inventory', icon: <Package size={14} /> },
             { id: 'timings', label: 'Timings', icon: <Clock size={14} /> },
             { id: 'orders', label: 'Orders', icon: <ShoppingBag size={14} /> },
             { id: 'delivery', label: 'Delivery', icon: <Truck size={14} /> }
-          ].map((tab) => (
+          ] as const).map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
+              onClick={() => setActiveTab(tab.id)}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5 cursor-pointer ${
                 activeTab === tab.id 
                   ? 'bg-primary text-white shadow' 
@@ -347,7 +347,7 @@ export default function AdminPage() {
           <div className="flex items-center justify-between p-4 bg-[var(--background)] border border-[var(--border)] rounded-2xl shadow-sm">
             <div className="space-y-0.5">
               <h4 className="font-bold text-sm text-[var(--foreground)]">Store Holiday Mode</h4>
-              <p className="text-[10px] text-[var(--muted)] font-semibold">Toggles the storefront status to "Closed Now" for holidays or events.</p>
+              <p className="text-[10px] text-[var(--muted)] font-semibold">Toggles the storefront status to &quot;Closed Now&quot; for holidays or events.</p>
             </div>
             <input type="checkbox" checked={holidayMode} onChange={(e) => {
               setHolidayMode(e.target.checked);
@@ -443,7 +443,7 @@ export default function AdminPage() {
                 />
                 <span className="text-sm font-black text-primary w-12 text-right">{deliveryRadius} km</span>
               </div>
-              <p className="text-[10px] text-[var(--muted)]">Orders outside this radius will show "Call for availability"</p>
+              <p className="text-[10px] text-[var(--muted)]">Orders outside this radius will show &quot;Call for availability&quot;</p>
             </div>
 
             <div className="space-y-2">

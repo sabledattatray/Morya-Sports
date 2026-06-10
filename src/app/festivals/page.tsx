@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Sparkles, Timer, Tag, Gift, Star } from 'lucide-react';
+import { Sparkles, Timer, Gift, Star } from 'lucide-react';
 import { PRODUCTS } from '../../data/mockData';
 import ProductCard from '../../components/ProductCard';
 

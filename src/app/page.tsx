@@ -6,12 +6,10 @@ import Image from 'next/image';
 import { 
   Sparkles, 
   MapPin, 
-  Truck, 
   Gift, 
   Star, 
   PhoneCall, 
   ShieldCheck, 
-  Award, 
   MessageCircle,
   Map,
   ArrowRight,
@@ -228,11 +226,11 @@ export default function Home() {
             <div className="lg:col-span-5 relative flex justify-center">
               <div className="relative w-full max-w-[440px] aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 card-shadow bg-slate-200">
                 <Image
-                  src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=800&q=80"
+                  src="/morya-sports-hero.png"
                   alt="Sports equipment at Morya Sports Badlapur"
                   fill
                   sizes="(max-width: 1024px) 100vw, 440px"
-                  className="object-cover transition-transform duration-700 ease-out"
+                  className="object-cover transition-transform duration-700 ease-out hover:scale-105"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent flex items-end p-6">
@@ -241,7 +239,7 @@ export default function Home() {
                       <Star size={12} fill="currentColor" />
                       <span>5.0 / 5 — Loved by Badlapur athletes</span>
                     </div>
-                    <h2 className="font-poppins font-bold text-base leading-tight">All sports gear at Adarsh College Road, Badlapur East</h2>
+                    <h2 className="font-poppins font-bold text-base leading-tight">Morya Sport, Badlapur, Near Adarsh College</h2>
                   </div>
                 </div>
               </div>
