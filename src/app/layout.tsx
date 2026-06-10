@@ -62,7 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable} h-full antialiased`} suppressHydrationWarning>
-      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]" suppressHydrationWarning>
+      <body className="min-h-dvh flex flex-col bg-[var(--background)] text-[var(--foreground)]" suppressHydrationWarning>
         <ThemeProvider>
           <Navbar />
           <main className="flex-grow flex flex-col">

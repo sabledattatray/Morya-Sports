@@ -165,7 +165,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex-grow flex flex-col w-full">
 
       {/* ── HERO SECTION ── */}
       <section className="relative bg-slate-50 dark:bg-slate-950 py-20 lg:py-28 overflow-hidden">
