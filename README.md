@@ -4,6 +4,14 @@
 
 ---
 
+## 📸 Screenshots
+
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="public/home_light.png" width="400" alt="Morya Sports Light Mode" /> | <img src="public/home_Dark.png" width="400" alt="Morya Sports Dark Mode" /> |
+
+---
+
 ## ✨ Features
 
 ### 🛒 Shopping Experience
