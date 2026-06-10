@@ -25,20 +25,117 @@ import ProductCard from '../components/ProductCard';
 import QuickViewModal from '../components/QuickViewModal';
 import SportsGearFinderWizard from '../components/SportsGearFinderWizard';
 
-const getCategoryStyle = (slug: string) => {
-  switch (slug) {
-    case 'cricket': return 'border-amber-100 dark:border-amber-900/30 hover:border-amber-400 bg-gradient-to-b from-amber-50/20 to-transparent text-amber-600 dark:text-amber-400 hover:shadow-amber-500/10';
-    case 'football': return 'border-green-100 dark:border-green-900/30 hover:border-green-400 bg-gradient-to-b from-green-50/20 to-transparent text-green-600 dark:text-green-400 hover:shadow-green-500/10';
-    case 'badminton': return 'border-blue-100 dark:border-blue-900/30 hover:border-blue-400 bg-gradient-to-b from-blue-50/20 to-transparent text-blue-600 dark:text-blue-400 hover:shadow-blue-500/10';
-    case 'jerseys-sportswear': return 'border-rose-100 dark:border-rose-900/30 hover:border-rose-400 bg-gradient-to-b from-rose-50/20 to-transparent text-rose-600 dark:text-rose-400 hover:shadow-rose-500/10';
-    case 'kabaddi-wrestling': return 'border-orange-100 dark:border-orange-900/30 hover:border-orange-400 bg-gradient-to-b from-orange-50/20 to-transparent text-orange-600 dark:text-orange-400 hover:shadow-orange-500/10';
-    case 'athletics-running': return 'border-purple-100 dark:border-purple-900/30 hover:border-purple-400 bg-gradient-to-b from-purple-50/20 to-transparent text-purple-600 dark:text-purple-400 hover:shadow-purple-500/10';
-    case 'trophies-medals': return 'border-yellow-100 dark:border-yellow-900/30 hover:border-yellow-400 bg-gradient-to-b from-yellow-50/20 to-transparent text-yellow-600 dark:text-yellow-400 hover:shadow-yellow-500/10';
-    case 'gym-fitness': return 'border-red-100 dark:border-red-900/30 hover:border-red-400 bg-gradient-to-b from-red-50/20 to-transparent text-red-600 dark:text-red-400 hover:shadow-red-500/10';
-    case 'outdoor-sports': return 'border-teal-100 dark:border-teal-900/30 hover:border-teal-400 bg-gradient-to-b from-teal-50/20 to-transparent text-teal-600 dark:text-teal-400 hover:shadow-teal-500/10';
-    case 'school-sports': return 'border-indigo-100 dark:border-indigo-900/30 hover:border-indigo-400 bg-gradient-to-b from-indigo-50/20 to-transparent text-indigo-600 dark:text-indigo-400 hover:shadow-indigo-500/10';
-    default: return 'border-[var(--border)] hover:border-primary/45 bg-[var(--card)] text-primary hover:shadow-lg';
-  }
+// Category card styling configuration mapping for an ultra-premium athletic brand layout
+const CATEGORY_STYLES: Record<string, {
+  borderHover: string;
+  glowColor: string;
+  radialGlow: string;
+  badgeBg: string;
+  badgeBorder: string;
+  topGlowDot: string;
+  itemCountBg: string;
+  arrowAccent: string;
+}> = {
+  cricket: {
+    borderHover: 'group-hover:border-amber-500/50 dark:group-hover:border-amber-500/60',
+    glowColor: 'group-hover:shadow-[0_15px_30px_-10px_rgba(245,158,11,0.25)]',
+    radialGlow: 'bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.12),transparent_60%)]',
+    badgeBg: 'bg-amber-500/10 dark:bg-amber-500/20',
+    badgeBorder: 'border-amber-500/20 dark:border-amber-500/40',
+    topGlowDot: 'bg-amber-500',
+    itemCountBg: 'bg-amber-500/5 text-amber-700 dark:text-amber-400 border-amber-500/10 dark:border-amber-500/20',
+    arrowAccent: 'text-amber-500 group-hover:text-amber-600 dark:group-hover:text-amber-400',
+  },
+  football: {
+    borderHover: 'group-hover:border-emerald-500/50 dark:group-hover:border-emerald-500/60',
+    glowColor: 'group-hover:shadow-[0_15px_30px_-10px_rgba(16,185,129,0.25)]',
+    radialGlow: 'bg-[radial-gradient(ellipse_at_top_right,rgba(16,185,129,0.12),transparent_60%)]',
+    badgeBg: 'bg-emerald-500/10 dark:bg-emerald-500/20',
+    badgeBorder: 'border-emerald-500/20 dark:border-emerald-500/40',
+    topGlowDot: 'bg-emerald-500',
+    itemCountBg: 'bg-emerald-500/5 text-emerald-700 dark:text-emerald-400 border-emerald-500/10 dark:border-emerald-500/20',
+    arrowAccent: 'text-emerald-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400',
+  },
+  badminton: {
+    borderHover: 'group-hover:border-blue-500/50 dark:group-hover:border-blue-500/60',
+    glowColor: 'group-hover:shadow-[0_15px_30px_-10px_rgba(59,130,246,0.25)]',
+    radialGlow: 'bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.12),transparent_60%)]',
+    badgeBg: 'bg-blue-500/10 dark:bg-blue-500/20',
+    badgeBorder: 'border-blue-500/20 dark:border-blue-500/40',
+    topGlowDot: 'bg-blue-500',
+    itemCountBg: 'bg-blue-500/5 text-blue-700 dark:text-blue-400 border-blue-500/10 dark:border-blue-500/20',
+    arrowAccent: 'text-blue-500 group-hover:text-blue-600 dark:group-hover:text-blue-400',
+  },
+  'jerseys-sportswear': {
+    borderHover: 'group-hover:border-rose-500/50 dark:group-hover:border-rose-500/60',
+    glowColor: 'group-hover:shadow-[0_15px_30px_-10px_rgba(244,63,94,0.25)]',
+    radialGlow: 'bg-[radial-gradient(ellipse_at_top_right,rgba(244,63,94,0.12),transparent_60%)]',
+    badgeBg: 'bg-rose-500/10 dark:bg-rose-500/20',
+    badgeBorder: 'border-rose-500/20 dark:border-rose-500/40',
+    topGlowDot: 'bg-rose-500',
+    itemCountBg: 'bg-rose-500/5 text-rose-700 dark:text-rose-400 border-rose-500/10 dark:border-rose-500/20',
+    arrowAccent: 'text-rose-500 group-hover:text-rose-600 dark:group-hover:text-rose-400',
+  },
+  'kabaddi-wrestling': {
+    borderHover: 'group-hover:border-red-500/50 dark:group-hover:border-red-500/60',
+    glowColor: 'group-hover:shadow-[0_15px_30px_-10px_rgba(239,68,68,0.25)]',
+    radialGlow: 'bg-[radial-gradient(ellipse_at_top_right,rgba(239,68,68,0.12),transparent_60%)]',
+    badgeBg: 'bg-red-500/10 dark:bg-red-500/20',
+    badgeBorder: 'border-red-500/20 dark:border-red-500/40',
+    topGlowDot: 'bg-red-500',
+    itemCountBg: 'bg-red-500/5 text-red-700 dark:text-red-400 border-red-500/10 dark:border-red-500/20',
+    arrowAccent: 'text-red-500 group-hover:text-red-600 dark:group-hover:text-red-400',
+  },
+  'athletics-running': {
+    borderHover: 'group-hover:border-cyan-500/50 dark:group-hover:border-cyan-500/60',
+    glowColor: 'group-hover:shadow-[0_15px_30px_-10px_rgba(6,182,212,0.25)]',
+    radialGlow: 'bg-[radial-gradient(ellipse_at_top_right,rgba(6,182,212,0.12),transparent_60%)]',
+    badgeBg: 'bg-cyan-500/10 dark:bg-cyan-500/20',
+    badgeBorder: 'border-cyan-500/20 dark:border-cyan-500/40',
+    topGlowDot: 'bg-cyan-500',
+    itemCountBg: 'bg-cyan-500/5 text-cyan-700 dark:text-cyan-400 border-cyan-500/10 dark:border-cyan-500/20',
+    arrowAccent: 'text-cyan-500 group-hover:text-cyan-600 dark:group-hover:text-cyan-400',
+  },
+  'trophies-medals': {
+    borderHover: 'group-hover:border-yellow-500/50 dark:group-hover:border-yellow-500/60',
+    glowColor: 'group-hover:shadow-[0_15px_30px_-10px_rgba(234,179,8,0.25)]',
+    radialGlow: 'bg-[radial-gradient(ellipse_at_top_right,rgba(234,179,8,0.12),transparent_60%)]',
+    badgeBg: 'bg-yellow-500/10 dark:bg-yellow-500/20',
+    badgeBorder: 'border-yellow-500/20 dark:border-yellow-500/40',
+    topGlowDot: 'bg-yellow-500',
+    itemCountBg: 'bg-yellow-500/5 text-yellow-700 dark:text-yellow-400 border-yellow-500/10 dark:border-yellow-500/20',
+    arrowAccent: 'text-yellow-500 group-hover:text-yellow-600 dark:group-hover:text-yellow-400',
+  },
+  'gym-fitness': {
+    borderHover: 'group-hover:border-indigo-500/50 dark:group-hover:border-indigo-500/60',
+    glowColor: 'group-hover:shadow-[0_15px_30px_-10px_rgba(99,102,241,0.25)]',
+    radialGlow: 'bg-[radial-gradient(ellipse_at_top_right,rgba(99,102,241,0.12),transparent_60%)]',
+    badgeBg: 'bg-indigo-500/10 dark:bg-indigo-500/20',
+    badgeBorder: 'border-indigo-500/20 dark:border-indigo-500/40',
+    topGlowDot: 'bg-indigo-500',
+    itemCountBg: 'bg-indigo-500/5 text-indigo-700 dark:text-indigo-400 border-indigo-500/10 dark:border-indigo-500/20',
+    arrowAccent: 'text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400',
+  },
+  'outdoor-sports': {
+    borderHover: 'group-hover:border-teal-500/50 dark:group-hover:border-teal-500/60',
+    glowColor: 'group-hover:shadow-[0_15px_30px_-10px_rgba(20,184,166,0.25)]',
+    radialGlow: 'bg-[radial-gradient(ellipse_at_top_right,rgba(20,184,166,0.12),transparent_60%)]',
+    badgeBg: 'bg-teal-500/10 dark:bg-teal-500/20',
+    badgeBorder: 'border-teal-500/20 dark:border-teal-500/40',
+    topGlowDot: 'bg-teal-500',
+    itemCountBg: 'bg-teal-500/5 text-teal-700 dark:text-teal-400 border-teal-500/10 dark:border-teal-500/20',
+    arrowAccent: 'text-teal-500 group-hover:text-teal-600 dark:group-hover:text-teal-400',
+  },
+  'school-sports': {
+    borderHover: 'group-hover:border-violet-500/50 dark:group-hover:border-violet-500/60',
+    glowColor: 'group-hover:shadow-[0_15px_30px_-10px_rgba(139,92,246,0.25)]',
+    radialGlow: 'bg-[radial-gradient(ellipse_at_top_right,rgba(139,92,246,0.12),transparent_60%)]',
+    badgeBg: 'bg-violet-500/10 dark:bg-violet-500/20',
+    badgeBorder: 'border-violet-500/20 dark:border-violet-500/40',
+    topGlowDot: 'bg-violet-500',
+    itemCountBg: 'bg-violet-500/5 text-violet-700 dark:text-violet-400 border-violet-500/10 dark:border-violet-500/20',
+    arrowAccent: 'text-violet-500 group-hover:text-violet-600 dark:group-hover:text-violet-400',
+  },
 };
 
 export default function Home() {
@@ -215,27 +312,54 @@ export default function Home() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
           {CATEGORIES.map((cat) => {
             const productCount = PRODUCTS.filter(p => p.category.toLowerCase() === cat.name.toLowerCase()).length;
+            const style = CATEGORY_STYLES[cat.id] || CATEGORY_STYLES['cricket'];
             return (
               <Link key={cat.id} href={`/categories/${cat.slug}`}
-                className={`group relative border rounded-[32px] p-6 flex flex-col items-center justify-between text-center overflow-hidden cursor-pointer card-shadow transition-all duration-500 hover:scale-105 hover:-translate-y-1.5 hover:rotate-1 hover:shadow-xl ${getCategoryStyle(cat.slug)}`}
+                className={`group relative border border-[var(--border)] bg-[var(--card)] rounded-2xl p-5 flex flex-col justify-between items-start text-left overflow-hidden cursor-pointer shadow-sm transition-all duration-300 h-52 hover:-translate-y-1.5 ${style.borderHover} ${style.glowColor}`}
               >
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                <div className="flex flex-col items-center space-y-4 w-full">
-                  <div className="relative">
-                    <span className="text-4xl p-5 bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-black rounded-3xl shadow-sm border border-slate-200/50 dark:border-white/5 relative flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                      {cat.image}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="font-poppins font-bold text-sm text-[var(--foreground)] group-hover:text-current transition-colors line-clamp-1">{cat.name}</h3>
-                  </div>
+                {/* Background Sport-Specific Accent Glow */}
+                <div className={`absolute top-0 right-0 w-32 h-32 ${style.radialGlow} rounded-full blur-2xl group-hover:scale-125 transition-all duration-500`} />
+                
+                {/* Diagonal subtle line pattern overlay */}
+                <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity duration-300 pointer-events-none" 
+                     style={{
+                       backgroundImage: 'repeating-linear-gradient(45deg, var(--foreground) 0px, var(--foreground) 1px, transparent 1px, transparent 10px)'
+                     }}
+                />
+
+                {/* Oversized Background Emoji Watermark */}
+                <div className="absolute -bottom-4 -right-4 text-8xl opacity-[0.06] group-hover:opacity-[0.12] group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500 select-none pointer-events-none">
+                  {cat.image}
                 </div>
-                <div className="flex flex-col items-center w-full mt-3">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 text-[var(--muted)] group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
-                    {productCount > 0 ? `${productCount} Products` : 'View All'}
+
+                {/* Corner Crosshair Blueprint Accents */}
+                <div className="absolute top-2 left-2 w-1.5 h-1.5 border-t border-l border-[var(--border)] group-hover:border-primary/40 transition-colors" />
+                <div className="absolute top-2 right-2 w-1.5 h-1.5 border-t border-r border-[var(--border)] group-hover:border-primary/40 transition-colors" />
+                <div className="absolute bottom-2 left-2 w-1.5 h-1.5 border-b border-l border-[var(--border)] group-hover:border-primary/40 transition-colors" />
+                <div className="absolute bottom-2 right-2 w-1.5 h-1.5 border-b border-r border-[var(--border)] group-hover:border-primary/40 transition-colors" />
+
+                {/* Top Section: Icon Pill & count badge */}
+                <div className="w-full flex justify-between items-center z-10">
+                  <span className={`text-3xl p-3 bg-[var(--accent-light)] rounded-xl border group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 flex items-center justify-center shadow-sm ${style.badgeBg} ${style.badgeBorder}`}>
+                    {cat.image}
                   </span>
-                  <div className="flex items-center justify-center space-x-1 mt-2 text-[9px] font-black uppercase tracking-wider text-primary dark:text-secondary opacity-0 -translate-y-1.5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    <span>Explore</span><span>→</span>
+                  
+                  {/* Premium Count Pill */}
+                  <span className={`text-[10px] font-mono font-bold tracking-wider px-2 py-0.5 rounded-full border flex items-center space-x-1 ${style.itemCountBg} backdrop-blur-sm transition-colors duration-300`}>
+                    <span className={`w-1 h-1 rounded-full ${style.topGlowDot} animate-pulse-soft`} />
+                    <span>{productCount > 0 ? `${productCount} Items` : '0 Items'}</span>
+                  </span>
+                </div>
+
+                {/* Bottom Section: Text & Explore */}
+                <div className="w-full space-y-1.5 pt-4 z-10">
+                  <h3 className="font-poppins font-black text-sm sm:text-base text-[var(--foreground)] uppercase tracking-wide leading-tight italic">
+                    {cat.name}
+                  </h3>
+                  
+                  <div className={`flex items-center space-x-1.5 text-[9px] font-black uppercase tracking-widest ${style.arrowAccent}`}>
+                    <span className="opacity-95">Explore</span>
+                    <span className="transform group-hover:translate-x-1.5 transition-transform duration-300">→</span>
                   </div>
                 </div>
               </Link>
