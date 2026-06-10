@@ -95,7 +95,7 @@ export default function Navbar() {
           {/* Brand Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="flex items-center space-x-0.5 sm:space-x-1">
+              <div className="flex items-center space-x-0.5">
                 <span className="relative inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-primary text-white shadow font-poppins font-black text-sm sm:text-lg transform -rotate-6 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300">
                   <Trophy size={12} className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-yellow-400 rotate-12 drop-shadow-md sm:w-4 sm:h-4" fill="currentColor" />
                   M
@@ -103,7 +103,7 @@ export default function Navbar() {
                 <span className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-secondary text-slate-900 shadow font-poppins font-black text-sm sm:text-lg transform rotate-6 group-hover:-rotate-12 group-hover:scale-110 transition-all duration-300">
                   S
                 </span>
-                <span className="font-poppins font-black text-[13px] min-[360px]:text-sm sm:text-xl tracking-tight text-[var(--foreground)] ml-1 group-hover:text-primary transition-colors flex items-center whitespace-nowrap">
+                <span className="font-poppins font-black text-xs min-[360px]:text-[13px] min-[390px]:text-sm sm:text-xl tracking-tight text-[var(--foreground)] ml-1 group-hover:text-primary transition-colors flex items-center whitespace-nowrap">
                   MORYA SPORTS
                   <Sparkles size={12} className="hidden sm:inline-block text-secondary ml-1 animate-spin-slow sm:w-4 sm:h-4" />
                 </span>
@@ -194,23 +194,23 @@ export default function Navbar() {
           </nav>
 
           {/* Action Icons */}
-          <div className="flex items-center space-x-1 sm:space-x-4">
-            <button onClick={toggleTheme} className="inline-flex p-1.5 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 hover:rotate-12 transition-all duration-300 cursor-pointer" aria-label="Toggle dark mode">
+          <div className="flex items-center space-x-0.5 sm:space-x-4">
+            <button onClick={toggleTheme} className="inline-flex p-1 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 hover:rotate-12 transition-all duration-300 cursor-pointer" aria-label="Toggle dark mode">
               {theme === 'light' ? <Moon size={18} className="sm:w-5 sm:h-5" /> : <Sun size={18} className="text-secondary sm:w-5 sm:h-5" />}
             </button>
-            <Link href="/wishlist" className="hidden sm:inline-flex relative p-1.5 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 transition-all duration-300" aria-label="View Wishlist">
+            <Link href="/wishlist" className="hidden sm:inline-flex relative p-1 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 transition-all duration-300" aria-label="View Wishlist">
               <Heart size={18} className="hover:text-primary sm:w-5 sm:h-5" />
               {mounted && wishlistCount > 0 && (
                 <span className="absolute -top-0.5 -right-0.5 w-4 h-4 sm:w-5 sm:h-5 bg-primary text-white text-[9px] sm:text-[10px] font-bold rounded-full flex items-center justify-center animate-bounce">{wishlistCount}</span>
               )}
             </Link>
-            <Link href="/cart" onClick={(e) => { e.preventDefault(); setCartOpen(true); }} className="relative p-1.5 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 transition-all duration-300 cursor-pointer" aria-label="View Cart">
+            <Link href="/cart" onClick={(e) => { e.preventDefault(); setCartOpen(true); }} className="relative p-1 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 transition-all duration-300 cursor-pointer" aria-label="View Cart">
               <ShoppingBag size={18} className="hover:text-secondary sm:w-5 sm:h-5" />
               {mounted && cartItemCount > 0 && (
                 <span className="absolute -top-0.5 -right-0.5 w-4 h-4 sm:w-5 sm:h-5 bg-secondary text-slate-900 text-[9px] sm:text-[10px] font-extrabold rounded-full flex items-center justify-center animate-bounce">{cartItemCount}</span>
               )}
             </Link>
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-1.5 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] transition-all duration-300 cursor-pointer" aria-label="Toggle Menu">
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-1 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] transition-all duration-300 cursor-pointer" aria-label="Toggle Menu">
               {mobileMenuOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Menu size={20} className="sm:w-6 sm:h-6" />}
             </button>
           </div>

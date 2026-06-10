@@ -65,7 +65,7 @@ export default function RootLayout({
       <body className="min-h-dvh flex flex-col bg-[var(--background)] text-[var(--foreground)]" suppressHydrationWarning>
         <ThemeProvider>
           <Navbar />
-          <main className="flex-grow flex flex-col">
+          <main className="flex-grow flex flex-col overflow-x-hidden">
             {children}
           </main>
           <Footer />
