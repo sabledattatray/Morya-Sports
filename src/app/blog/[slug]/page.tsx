@@ -1,17 +1,25 @@
-'use client';
-
 import Image from 'next/image';
-import React, { use } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, Clock, ChevronRight, User } from 'lucide-react';
 import { BLOGS } from '../../../data/mockData';
+import { Metadata } from 'next';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export default function BlogDetailPage({ params }: PageProps) {
-  const { slug } = use(params);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = BLOGS.find(b => b.slug === slug);
+  return {
+    title: blog ? `${blog.title} | Morya Sports` : 'Article Not Found | Morya Sports',
+    description: blog ? blog.excerpt : 'The requested sports guide or training article was not found.',
+  };
+}
+
+export default async function BlogDetailPage({ params }: PageProps) {
+  const { slug } = await params;
 
   // Find blog data
   const blog = BLOGS.find(b => b.slug === slug);

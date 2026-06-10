@@ -1,8 +1,12 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import { Scale, FileText } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service | Morya Sports Badlapur',
+  description: 'Terms of Service for Morya Sports Badlapur. Learn about our transactional rules, pricing accuracy, bulk order terms, and custom jersey printing agreement.',
+};
 
 export default function TermsOfServicePage() {
   return (

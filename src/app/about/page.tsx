@@ -1,8 +1,12 @@
-'use client';
-
 import React from 'react';
 import { Sparkles, Trophy, ShieldCheck, Heart, Calendar, MapPin } from 'lucide-react';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About Us | Morya Sports Badlapur',
+  description: 'Learn about Morya Sports Badlapur — our humble beginnings, our mission to support local athletes, and our journey as Badlapur\'s favorite sports gear and jersey printing shop.',
+};
 
 export default function AboutPage() {
   return (

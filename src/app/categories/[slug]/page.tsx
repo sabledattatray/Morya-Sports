@@ -1,17 +1,25 @@
-'use client';
-
-import React, { use } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { ChevronRight, PackageOpen } from 'lucide-react';
 import { CATEGORIES, PRODUCTS } from '../../../data/mockData';
 import ProductCard from '../../../components/ProductCard';
+import { Metadata } from 'next';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export default function CategoryPage({ params }: PageProps) {
-  const { slug } = use(params);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const categoryData = CATEGORIES.find(c => c.slug === slug);
+  return {
+    title: categoryData ? `${categoryData.name} Gear & Equipment | Morya Sports` : 'Category Not Found | Morya Sports',
+    description: categoryData ? `${categoryData.desc} Find high-quality ${categoryData.name.toLowerCase()} products at Morya Sports Badlapur.` : 'Browse premium sports gear and accessories.',
+  };
+}
+
+export default async function CategoryPage({ params }: PageProps) {
+  const { slug } = await params;
 
   // Find category metadata
   const categoryData = CATEGORIES.find(c => c.slug === slug);

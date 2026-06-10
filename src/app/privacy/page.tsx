@@ -1,8 +1,12 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import { Lock, EyeOff } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Morya Sports Badlapur',
+  description: 'Privacy Policy for Morya Sports Badlapur. Learn how we collect, protect, and handle your order information, delivery coordinates, and payment data.',
+};
 
 export default function PrivacyPolicyPage() {
   return (

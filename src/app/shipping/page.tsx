@@ -1,8 +1,12 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import { Truck, Clock } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Shipping & Delivery Policy | Morya Sports Badlapur',
+  description: 'Shipping and Delivery policy at Morya Sports Badlapur. Get fast home delivery in 24–48 hours, free local delivery on orders above ₹999, and free store pickup coordinates.',
+};
 
 export default function ShippingPolicyPage() {
   return (

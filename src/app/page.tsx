@@ -233,6 +233,7 @@ export default function Home() {
                   fill
                   sizes="(max-width: 1024px) 100vw, 440px"
                   className="object-cover transition-transform duration-700 ease-out"
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent flex items-end p-6">
                   <div className="text-white">

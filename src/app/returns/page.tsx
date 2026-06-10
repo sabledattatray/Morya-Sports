@@ -1,8 +1,12 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import { RotateCcw, ShieldCheck } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Returns & Refunds | Morya Sports Badlapur',
+  description: 'Returns and Refunds Policy for Morya Sports Badlapur. Learn about our 7-day return policy, defective item replacements, and bank refund timelines.',
+};
 
 export default function ReturnsRefundsPage() {
   return (

@@ -1,10 +1,14 @@
-'use client';
-
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
 import { BLOGS } from '../../data/mockData';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Sports Guides, Tips & Training Blog | Morya Sports Badlapur',
+  description: 'Read Morya Sports blog for expert advice on selecting cricket bats, custom sublimation jersey designs, tournament organization, and fitness training guides.',
+};
 
 export default function BlogPage() {
   return (
