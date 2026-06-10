@@ -66,7 +66,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`sticky top-0 z-50 w-full glassmorphism border-b border-[var(--border)] transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <header className="sticky top-0 z-50 w-full glassmorphism border-b border-[var(--border)]">
       {/* Top Banner */}
       <div className="w-full bg-slate-900 text-slate-100 px-2 sm:px-4 text-[10px] sm:text-xs flex justify-between items-center h-8 py-1.5 overflow-hidden">
         <div className="flex items-center space-x-2 sm:space-x-4 min-w-0">
