@@ -71,7 +71,17 @@ Shop No 15, Bebika Palace, Adarsh College Road, Badlapur East, Maharashtra 42150
 
 ---
 
+## 👨‍💻 Developed By
+
+This website was designed, engineered, and deployed by:
+
+* **Datta Sable** — *Full-Stack Developer & Solutions Architect*  
+  🌐 [Portfolio Website](https://dattasable.com) | 🐙 [GitHub Profile](https://github.com/sabledattatray)
+
+---
+
 ## 📄 License
 
 This project is a custom-built commercial website for **Morya Sports Badlapur ®️**.  
 © 2026 Morya Sports. All rights reserved.
+
