@@ -121,6 +121,10 @@
 }
 
 @layer base {
+  html {
+    min-height: 100dvh;
+  }
+
   html,
   body {
     width: 100%;
@@ -132,7 +136,7 @@
     color: var(--foreground);
     font-family: var(--font-inter);
     transition: background-color 0.3s ease, color 0.3s ease;
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
   }

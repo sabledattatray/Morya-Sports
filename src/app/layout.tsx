@@ -61,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable} h-full antialiased`} suppressHydrationWarning>
+    <html lang="en" className={`${poppins.variable} ${inter.variable} min-h-dvh antialiased`} suppressHydrationWarning>
       <body className="min-h-dvh flex flex-col bg-[var(--background)] text-[var(--foreground)]" suppressHydrationWarning>
         <ThemeProvider>
           <Navbar />

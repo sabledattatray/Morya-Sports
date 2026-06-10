@@ -195,7 +195,7 @@ export default function Navbar() {
 
           {/* Action Icons */}
           <div className="flex items-center space-x-1 sm:space-x-4">
-            <button onClick={toggleTheme} className="hidden sm:inline-flex p-1.5 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 hover:rotate-12 transition-all duration-300 cursor-pointer" aria-label="Toggle dark mode">
+            <button onClick={toggleTheme} className="inline-flex p-1.5 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 hover:rotate-12 transition-all duration-300 cursor-pointer" aria-label="Toggle dark mode">
               {theme === 'light' ? <Moon size={18} className="sm:w-5 sm:h-5" /> : <Sun size={18} className="text-secondary sm:w-5 sm:h-5" />}
             </button>
             <Link href="/wishlist" className="hidden sm:inline-flex relative p-1.5 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 transition-all duration-300" aria-label="View Wishlist">
