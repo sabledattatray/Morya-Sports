@@ -3,20 +3,20 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #FF4D4D;
-  --color-primary-hover: #E63939;
-  --color-secondary: #FFB800;
-  --color-secondary-hover: #E6A600;
-  --color-accent: #4A90E2;
-  --color-accent-hover: #357ABD;
-  --color-success: #22C55E;
+  --color-primary: #FF1E1E; /* High-energy sports red */
+  --color-primary-hover: #E00000;
+  --color-secondary: #FF9900; /* Vibrant sports orange/gold */
+  --color-secondary-hover: #E67A00;
+  --color-accent: #2563EB; /* Premium royal blue */
+  --color-accent-hover: #1D4ED8;
+  --color-success: #10B981; /* Neon green */
   
-  --color-primary-playful: #FF5A79;
-  --color-secondary-playful: #FFB600;
-  --color-accent-playful: #3B82F6;
+  --color-primary-playful: #FF1E1E;
+  --color-secondary-playful: #FF9900;
+  --color-accent-playful: #2563EB;
   --color-mint: #10B981;
-  --color-lavender: #8B5CF6;
-  --color-peach: #FFEDD5;
+  --color-lavender: #6366F1;
+  --color-peach: #FEE2E2;
 
   --font-poppins: var(--font-poppins), sans-serif;
   --font-inter: var(--font-inter), sans-serif;
@@ -95,29 +95,29 @@
 }
 
 :root {
-  --background: #FFFDF9; /* Warm butter cream background */
-  --foreground: #1E293B;
-  --card: #FDFBF7; /* Soft warm card background */
+  --background: #FFFFFF; /* Stark clean background */
+  --foreground: #0F172A; /* Cool dark slate */
+  --card: #F8FAFC; /* Cool light slate card */
   --card-foreground: #0F172A;
-  --border: #F1ECE4; /* Soft warm border */
-  --muted: #64748B;
-  --muted-foreground: #94A3B8;
-  --accent-light: #FBF7F0;
-  --premium-gradient: linear-gradient(135deg, #E11D48 0%, #D97706 100%);
-  --premium-gradient-hover: linear-gradient(135deg, #BE123C 0%, #B45309 100%);
+  --border: #E2E8F0; /* Slate 200 border */
+  --muted: #475569; /* Slate 600 */
+  --muted-foreground: #64748B;
+  --accent-light: #F1F5F9;
+  --premium-gradient: linear-gradient(135deg, #FF1E1E 0%, #FF9900 100%);
+  --premium-gradient-hover: linear-gradient(135deg, #E00000 0%, #E67A00 100%);
 }
 
 .dark {
-  --background: #010101;
+  --background: #0B0F19; /* High-performance athletic dark blue/black */
   --foreground: #F8FAFC;
-  --card: #010101;
-  --card-foreground: #F1F5F9;
-  --border: #1F1F1F;
-  --muted: #94A3B8;
-  --muted-foreground: #64748B;
-  --accent-light: #0A0A0A;
-  --premium-gradient: linear-gradient(135deg, #FF4D4D 0%, #FFB800 100%);
-  --premium-gradient-hover: linear-gradient(135deg, #E63939 0%, #E6A600 100%);
+  --card: #111827; /* Dark cool gray */
+  --card-foreground: #F9FAFB;
+  --border: #1F2937;
+  --muted: #9CA3AF;
+  --muted-foreground: #6B7280;
+  --accent-light: #1F2937;
+  --premium-gradient: linear-gradient(135deg, #FF1E1E 0%, #FF9900 100%);
+  --premium-gradient-hover: linear-gradient(135deg, #E00000 0%, #E67A00 100%);
 }
 
 @layer base {

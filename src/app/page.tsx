@@ -94,10 +94,10 @@ export default function Home() {
                 <span>Cricket · Football · Badminton · Custom Jerseys · Trophies</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-poppins font-black tracking-tight leading-none text-slate-900 dark:text-white">
-                <span className="text-slate-800 dark:text-white">Badlapur&apos;s Best</span><br />
-                <span className="text-primary-playful drop-shadow-sm inline-block hover:scale-105 hover:rotate-3 transition-transform">Sports</span>{' '}
-                <span className="text-secondary-playful drop-shadow-sm">Shop</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-poppins font-black tracking-tight leading-none text-slate-900 dark:text-white uppercase italic">
+                <span className="text-slate-900 dark:text-white">Badlapur&apos;s Best</span><br />
+                <span className="text-primary drop-shadow-md inline-block hover:scale-105 transition-transform">Sports</span>{' '}
+                <span className="text-secondary drop-shadow-md">Shop</span>
               </h1>
 
               <p className="text-base sm:text-lg text-[var(--muted)] max-w-xl leading-relaxed mx-auto lg:mx-0">
