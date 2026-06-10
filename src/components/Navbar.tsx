@@ -196,7 +196,7 @@ export default function Navbar() {
           {/* Action Icons */}
           <div className="flex items-center space-x-0.5 sm:space-x-4">
             <button onClick={toggleTheme} className="inline-flex p-1 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 hover:rotate-12 transition-all duration-300 cursor-pointer" aria-label="Toggle dark mode">
-              {theme === 'light' ? <Moon size={18} className="sm:w-5 sm:h-5" /> : <Sun size={18} className="text-secondary sm:w-5 sm:h-5" />}
+              {!mounted ? <div className="w-[18px] h-[18px] sm:w-5 sm:h-5" /> : theme === 'light' ? <Moon size={18} className="sm:w-5 sm:h-5" /> : <Sun size={18} className="text-secondary sm:w-5 sm:h-5" />}
             </button>
             <Link href="/wishlist" className="hidden sm:inline-flex relative p-1 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 transition-all duration-300" aria-label="View Wishlist">
               <Heart size={18} className="hover:text-primary sm:w-5 sm:h-5" />
@@ -243,7 +243,7 @@ export default function Navbar() {
               className="w-full text-left p-2 rounded-lg hover:bg-[var(--card)] flex items-center justify-between font-semibold cursor-pointer"
             >
               <span>Appearance</span>
-              <span className="text-xs text-[var(--muted)]">{theme === 'light' ? 'Light Mode ☀️' : 'Dark Mode 🌙'}</span>
+              <span className="text-xs text-[var(--muted)]">{!mounted ? '' : theme === 'light' ? 'Light Mode ☀️' : 'Dark Mode 🌙'}</span>
             </button>
             <Link href="/offers" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-[var(--card)] flex items-center justify-between">
               <span>Offers</span>

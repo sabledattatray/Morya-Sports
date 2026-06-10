@@ -47,10 +47,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // Prevent flash by avoiding rendering until mounted (or render fallback)
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div style={{ visibility: mounted ? 'visible' : 'hidden' }} className="min-h-dvh flex-grow flex flex-col w-full">
+      <div className="min-h-dvh flex-grow flex flex-col w-full">
         {children}
       </div>
     </ThemeContext.Provider>
