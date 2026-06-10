@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
-    apple: '/favicon.svg',
+    apple: '/apple-touch-icon.svg',
   },
   openGraph: {
     title: 'Morya Sports Badlapur | Best Sports Shop in Badlapur',
