@@ -103,9 +103,9 @@ export default function Navbar() {
                 <span className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-secondary text-slate-900 shadow font-poppins font-black text-sm sm:text-lg transform rotate-6 group-hover:-rotate-12 group-hover:scale-110 transition-all duration-300">
                   S
                 </span>
-                <span className="font-poppins font-black text-base sm:text-xl tracking-tight text-[var(--foreground)] ml-1 group-hover:text-primary transition-colors flex items-center">
+                <span className="font-poppins font-black text-[13px] min-[360px]:text-sm sm:text-xl tracking-tight text-[var(--foreground)] ml-1 group-hover:text-primary transition-colors flex items-center whitespace-nowrap">
                   MORYA SPORTS
-                  <Sparkles size={12} className="text-secondary ml-1 animate-spin-slow sm:w-4 sm:h-4" />
+                  <Sparkles size={12} className="hidden sm:inline-block text-secondary ml-1 animate-spin-slow sm:w-4 sm:h-4" />
                 </span>
               </div>
             </Link>
@@ -195,10 +195,10 @@ export default function Navbar() {
 
           {/* Action Icons */}
           <div className="flex items-center space-x-1 sm:space-x-4">
-            <button onClick={toggleTheme} className="p-1.5 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 hover:rotate-12 transition-all duration-300 cursor-pointer" aria-label="Toggle dark mode">
+            <button onClick={toggleTheme} className="hidden sm:inline-flex p-1.5 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 hover:rotate-12 transition-all duration-300 cursor-pointer" aria-label="Toggle dark mode">
               {theme === 'light' ? <Moon size={18} className="sm:w-5 sm:h-5" /> : <Sun size={18} className="text-secondary sm:w-5 sm:h-5" />}
             </button>
-            <Link href="/wishlist" className="relative p-1.5 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 transition-all duration-300" aria-label="View Wishlist">
+            <Link href="/wishlist" className="hidden sm:inline-flex relative p-1.5 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] border border-transparent hover:border-[var(--border)] hover:scale-110 transition-all duration-300" aria-label="View Wishlist">
               <Heart size={18} className="hover:text-primary sm:w-5 sm:h-5" />
               {mounted && wishlistCount > 0 && (
                 <span className="absolute -top-0.5 -right-0.5 w-4 h-4 sm:w-5 sm:h-5 bg-primary text-white text-[9px] sm:text-[10px] font-bold rounded-full flex items-center justify-center animate-bounce">{wishlistCount}</span>
@@ -210,7 +210,7 @@ export default function Navbar() {
                 <span className="absolute -top-0.5 -right-0.5 w-4 h-4 sm:w-5 sm:h-5 bg-secondary text-slate-900 text-[9px] sm:text-[10px] font-extrabold rounded-full flex items-center justify-center animate-bounce">{cartItemCount}</span>
               )}
             </Link>
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-1.5 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] transition-all duration-300" aria-label="Toggle Menu">
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-1.5 sm:p-2.5 rounded-full hover:bg-[var(--card)] text-[var(--foreground)] transition-all duration-300 cursor-pointer" aria-label="Toggle Menu">
               {mobileMenuOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Menu size={20} className="sm:w-6 sm:h-6" />}
             </button>
           </div>
@@ -232,6 +232,19 @@ export default function Navbar() {
               <span className="bg-primary text-white text-[9px] px-2 py-0.5 rounded-full font-bold">PRINT</span>
             </Link>
             <Link href="/categories/trophies-medals" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-[var(--card)]">Trophies & Medals</Link>
+            <Link href="/wishlist" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-[var(--card)] flex items-center justify-between">
+              <span>My Wishlist</span>
+              {wishlistCount > 0 && (
+                <span className="bg-primary text-white text-[9px] px-2 py-0.5 rounded-full font-bold">{wishlistCount}</span>
+              )}
+            </Link>
+            <button 
+              onClick={() => { toggleTheme(); setMobileMenuOpen(false); }} 
+              className="w-full text-left p-2 rounded-lg hover:bg-[var(--card)] flex items-center justify-between font-semibold cursor-pointer"
+            >
+              <span>Appearance</span>
+              <span className="text-xs text-[var(--muted)]">{theme === 'light' ? 'Light Mode ☀️' : 'Dark Mode 🌙'}</span>
+            </button>
             <Link href="/offers" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-[var(--card)] flex items-center justify-between">
               <span>Offers</span>
               <span className="bg-primary text-white text-[9px] px-2 py-0.5 rounded-full font-bold">HOT</span>
