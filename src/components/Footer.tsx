@@ -132,7 +132,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 sm:pt-8 border-t border-slate-800 text-center text-[9px] sm:text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
         <div className="whitespace-nowrap">
           © 2026 Morya Sports Badlapur | Made by{' '}
-          <a href="https://dattasble.com" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-slate-400 font-semibold text-slate-400">Datta Sable</a>
+          <a href="https://dattasable.com" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-slate-400 font-semibold text-slate-400">Datta Sable</a>
         </div>
         <div className="flex space-x-2 sm:space-x-6 whitespace-nowrap">
           <Link href="/privacy" className="hover:underline hover:text-slate-400">Privacy</Link>
