@@ -12,8 +12,8 @@ export default function BlogPage() {
       
       {/* Title */}
       <div className="space-y-1 text-center">
-        <h1 className="text-3xl font-poppins font-black text-[var(--foreground)] tracking-tight">Parenting Guides & Toy Blog</h1>
-        <p className="text-xs text-[var(--muted)]">Tips on child development, birthday event planning, and STEM learning</p>
+        <h1 className="text-3xl font-poppins font-black text-[var(--foreground)] tracking-tight">Sports Tips & Training Blog</h1>
+        <p className="text-xs text-[var(--muted)]">Tips on fitness, tournament training, jersey designs, and sports gear selection</p>
       </div>
 
       {/* Blogs list grid */}

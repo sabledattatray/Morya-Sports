@@ -21,40 +21,39 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Royal Crown Gifts Toys Perfumes ®️ | Badlapur\'s Favorite Premium Gift & Toy Boutique',
-  description: 'Buy premium gifts, toys, perfumes, custom acrylic name plates, personalized wallets, photo frames, and baby toys at Royal Crown Gifts Toys Perfumes Badlapur. Shop Online!',
-  keywords: 'Royal Crown Badlapur, Royal Crown Gifts Toys Perfumes, gift shop Badlapur, customized name plates Badlapur, custom wallets, customized mugs, photo frames Badlapur East, premium toys Badlapur, perfumes Badlapur, online gift shopping',
-  metadataBase: new URL('https://royalcrown-two.vercel.app'),
+  title: 'Morya Sports Badlapur | Best Sports Shop in Badlapur',
+  description: 'Buy cricket bats, footballs, badminton rackets, custom jerseys, trophies, medals and all sports equipment at Morya Sports Badlapur. Best quality at reasonable price!',
+  keywords: 'Morya Sports Badlapur, sports shop Badlapur, cricket bat Badlapur, custom jersey printing Badlapur, trophy shop Badlapur, badminton racket Badlapur, football Badlapur, sports equipment Maharashtra, Adarsh College Road Badlapur',
+  metadataBase: new URL('https://moryasports.vercel.app'),
   icons: {
     icon: [
-      { url: '/favicon.png', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
-    apple: '/favicon.png',
+    apple: '/favicon.svg',
   },
   openGraph: {
-    title: 'Royal Crown | Badlapur\'s Favorite Premium Gift & Toy Boutique',
-    description: 'Explore thousands of premium gifts, toys, perfumes, and customized items at Royal Crown Badlapur.',
-    url: 'https://royalcrown-two.vercel.app',
-    siteName: 'Royal Crown',
+    title: 'Morya Sports Badlapur | Best Sports Shop in Badlapur',
+    description: 'Cricket, football, badminton, custom jerseys, trophies & all sports equipment — best quality at reasonable price in Badlapur.',
+    url: 'https://moryasports.vercel.app',
+    siteName: 'Morya Sports Badlapur',
     locale: 'en_IN',
     type: 'website',
     images: [
       {
-        url: 'https://royalcrown-two.vercel.app/og-preview.png',
+        url: 'https://moryasports.vercel.app/og-preview.png',
         width: 1200,
         height: 630,
-        alt: 'Royal Crown Gifts Toys Perfumes – Badlapur\'s Favorite Premium Boutique',
+        alt: 'Morya Sports Badlapur – Best Sports Shop in Badlapur',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Royal Crown | Badlapur\'s Favorite Premium Gift & Toy Boutique',
-    description: 'Explore thousands of premium gifts, toys, perfumes, and customized items at Royal Crown Badlapur.',
-    images: ['https://royalcrown-two.vercel.app/og-preview.png'],
+    title: 'Morya Sports Badlapur | Best Sports Shop in Badlapur',
+    description: 'Cricket, football, badminton, custom jerseys, trophies & all sports equipment in Badlapur.',
+    images: ['https://moryasports.vercel.app/og-preview.png'],
   }
 };
-
 
 export default function RootLayout({
   children,

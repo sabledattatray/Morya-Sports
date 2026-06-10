@@ -55,13 +55,13 @@ export default function OffersPage() {
         <div className="space-y-2 relative z-10 max-w-xl mx-auto">
           <span className="inline-flex items-center space-x-1 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs font-bold text-primary">
             <Sparkles size={12} className="animate-spin" />
-            <span>Monsoon Toy Festival Sales</span>
+            <span>Monsoon Sports Festival Sales</span>
           </span>
           <h1 className="text-3xl sm:text-4xl font-poppins font-black text-[var(--foreground)] tracking-tight">
             Exclusive Deals & Discounts
           </h1>
           <p className="text-xs text-[var(--muted)]">
-            Premium toys and strategic board games on special discounts. Available for express delivery in Badlapur.
+            Premium cricket gear, badminton rackets and custom jerseys on special discounts. Available for express delivery in Badlapur.
           </p>
         </div>
 
@@ -90,8 +90,8 @@ export default function OffersPage() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {[
-            { code: 'TOY10', title: '10% OFF Storewide', desc: 'Apply at cart checkout to receive an extra 10% discount on all products. Valid on orders above ₹499.' },
-            { code: 'KIDS20', title: '20% OFF Educational Toys', desc: 'Get an extra 20% discount on puzzles, STEM learning kits, and art books. Valid on orders above ₹999.' }
+            { code: 'SPORTS10', title: '10% OFF Storewide', desc: 'Apply at cart checkout to receive an extra 10% discount on all products. Valid on orders above ₹499.' },
+            { code: 'TEAM20', title: '20% OFF Custom Jerseys & Trophies', desc: 'Get an extra 20% discount on custom sublimation printed jerseys and trophies. Valid on orders above ₹1,999.' }
           ].map((coupon) => (
             <div key={coupon.code} className="border border-[var(--border)] bg-[var(--card)] p-6 rounded-3xl card-shadow flex flex-col justify-between items-start gap-4">
               <div className="space-y-1">

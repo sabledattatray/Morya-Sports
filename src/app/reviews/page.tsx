@@ -59,7 +59,7 @@ export default function ReviewsPage() {
       {/* Title */}
       <div className="space-y-1 text-center">
         <h1 className="text-3xl font-poppins font-black text-[var(--foreground)] tracking-tight">Customer Reviews</h1>
-        <p className="text-xs text-[var(--muted)]">See what local Badlapur families say about Royal Crown</p>
+        <p className="text-xs text-[var(--muted)]">See what local Badlapur athletes say about Morya Sports</p>
       </div>
 
       {/* Ratings Dashboard breakdown */}
@@ -160,7 +160,7 @@ export default function ReviewsPage() {
                 <textarea
                   required
                   rows={3}
-                  placeholder="Tell others about your experience at Royal Crown..."
+                  placeholder="Tell others about your experience at Morya Sports..."
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   className="w-full py-2 px-3 rounded-xl border border-[var(--border)] bg-[var(--background)] text-sm focus:outline-none focus:ring-2 focus:ring-primary"

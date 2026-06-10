@@ -24,7 +24,6 @@ export default function CartPage() {
     setMounted(true);
   }, []);
 
-
   const [couponCode, setCouponCode] = useState('');
   const [discountPercent, setDiscountPercent] = useState(0);
   const [couponApplied, setCouponApplied] = useState(false);
@@ -35,10 +34,10 @@ export default function CartPage() {
   // Calculations
   const subtotal = cart.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
   
-  // Gift wrap cost: ₹30 per item wrapped
+  // Custom wrapping cost: ₹30 per item wrapped
   const wrapCost = cart.reduce((acc, item) => acc + (item.giftWrap ? 30 * item.quantity : 0), 0);
   
-  // Card fee
+  // Card/tag fee
   const cardFee = showCardBuilder ? 10 : 0;
   
   // Local delivery is free for orders above ₹999, else ₹50
@@ -53,16 +52,16 @@ export default function CartPage() {
   const handleApplyCoupon = (e: React.FormEvent) => {
     e.preventDefault();
     const code = couponCode.trim().toUpperCase();
-    if (code === 'TOY10') {
+    if (code === 'SPORTS10') {
       setDiscountPercent(10);
       setCouponApplied(true);
       setCouponError('');
-    } else if (code === 'KIDS20') {
+    } else if (code === 'TEAM20') {
       setDiscountPercent(20);
       setCouponApplied(true);
       setCouponError('');
     } else {
-      setCouponError('Invalid coupon code. Try "TOY10" or "KIDS20".');
+      setCouponError('Invalid coupon code. Try "SPORTS10" or "TEAM20".');
       setCouponApplied(false);
       setDiscountPercent(0);
     }
@@ -89,10 +88,10 @@ export default function CartPage() {
         </div>
         <div>
           <h1 className="text-3xl font-poppins font-extrabold text-[var(--foreground)]">Your Cart is Empty</h1>
-          <p className="text-sm text-[var(--muted)] mt-2">Looks like you haven't added any toys to your basket yet.</p>
+          <p className="text-sm text-[var(--muted)] mt-2">Looks like you haven't added any sports items to your basket yet.</p>
         </div>
         <Link href="/shop" className="inline-block px-8 py-3.5 bg-primary hover:bg-primary-hover text-white rounded-2xl font-bold transition-all shadow-md">
-          Explore Toys Catalog
+          Explore Sports Catalog
         </Link>
       </div>
     );
@@ -137,10 +136,10 @@ export default function CartPage() {
                       ? 'bg-primary/10 border-primary text-primary' 
                       : 'border-[var(--border)] hover:bg-[var(--background)] text-[var(--foreground)]'
                   }`}
-                  title="Add gift wrap (+₹30)"
+                  title="Add custom wrapping (+₹30)"
                 >
                   <Gift size={14} />
-                  <span>{item.giftWrap ? 'Gift Wrapped 🎁' : 'Add Gift Wrap'}</span>
+                  <span>{item.giftWrap ? 'Wrapping Added 🎁' : 'Add Wrapping'}</span>
                 </button>
 
                 {/* Counter */}
@@ -175,7 +174,7 @@ export default function CartPage() {
             </div>
           ))}
 
-          {/* GREETING CARD BUILDER BLOCK */}
+          {/* CUSTOM NOTE BUILDER BLOCK */}
           <div className="border border-dashed border-[var(--border)] bg-[var(--card)] p-6 rounded-3xl mt-6 space-y-4 card-shadow">
             <label className="flex items-center space-x-2 text-sm font-bold text-[var(--foreground)] cursor-pointer select-none">
               <input 
@@ -185,7 +184,7 @@ export default function CartPage() {
                 className="w-4 h-4 rounded text-primary focus:ring-primary border-[var(--border)]"
               />
               <span className="flex items-center gap-1.5 text-sm">
-                Add Birthday Greeting Card (+₹10) 📝
+                Add custom note / gift tag (+₹10) 📝
               </span>
             </label>
 
@@ -194,7 +193,7 @@ export default function CartPage() {
                 <input 
                   type="text"
                   maxLength={80}
-                  placeholder="Type birthday message (e.g. Happy Birthday Rahul!)"
+                  placeholder="Type your message (e.g. Best of luck team!)"
                   value={globalCardMsg}
                   onChange={(e) => setGlobalCardMsg(e.target.value)}
                   className="w-full py-2.5 px-3.5 rounded-xl border border-[var(--border)] bg-[var(--background)] text-sm placeholder:text-[var(--muted)] focus:outline-none focus:ring-2 focus:ring-primary text-[var(--foreground)]"
@@ -203,16 +202,16 @@ export default function CartPage() {
                 {/* VIRTUAL CARD PREVIEW */}
                 <div className="relative border-2 border-amber-200 dark:border-amber-900/50 bg-amber-50/50 dark:bg-amber-950/20 rounded-2xl p-6 overflow-hidden shadow-inner max-w-md mx-auto">
                   {/* Decorative elements */}
-                  <div className="absolute top-2 left-3 text-xl opacity-40 select-none">🎈</div>
-                  <div className="absolute bottom-2 right-3 text-xl opacity-40 select-none">🎂</div>
+                  <div className="absolute top-2 left-3 text-xl opacity-40 select-none">🏆</div>
+                  <div className="absolute bottom-2 right-3 text-xl opacity-40 select-none">🥇</div>
                   <div className="absolute top-3 right-6 text-sm text-secondary animate-pulse opacity-50">★</div>
                   
                   <div className="text-center space-y-2 relative z-10">
                     <div className="text-[10px] font-black text-amber-600 dark:text-amber-400 uppercase tracking-widest">
-                      Greeting Card Preview
+                      Custom Note Preview
                     </div>
                     <p className="font-serif italic font-extrabold text-primary-playful text-base min-h-[40px] leading-relaxed break-words px-4 pt-1 text-center">
-                      "{globalCardMsg || 'Happy Birthday! Wishing you fun & learning!'}"
+                      "{globalCardMsg || 'All the best! Play like a champion!'}"
                     </p>
                   </div>
                 </div>
@@ -264,7 +263,7 @@ export default function CartPage() {
             {couponError && (
               <p className="mt-2 text-xs text-primary font-bold">{couponError}</p>
             )}
-            <p className="mt-3 text-[10px] text-[var(--muted)]">Try "TOY10" for 10% off or "KIDS20" for 20% off.</p>
+            <p className="mt-3 text-[10px] text-[var(--muted)]">Try "SPORTS10" for 10% off or "TEAM20" for 20% off.</p>
           </div>
 
           {/* Checkout summary */}
@@ -277,12 +276,12 @@ export default function CartPage() {
                 <span className="font-semibold">₹{subtotal}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[var(--muted)]">Gift Wrapping:</span>
+                <span className="text-[var(--muted)]">Custom Wrapping:</span>
                 <span className="font-semibold">₹{wrapCost}</span>
               </div>
               {showCardBuilder && (
                 <div className="flex justify-between">
-                  <span className="text-[var(--muted)]">Greeting Card:</span>
+                  <span className="text-[var(--muted)]">Custom Note:</span>
                   <span className="font-semibold">₹{cardFee}</span>
                 </div>
               )}

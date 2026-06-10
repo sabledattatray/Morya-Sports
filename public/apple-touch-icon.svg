@@ -2,22 +2,22 @@
   <!-- Apple touch icon - solid background -->
   <rect width="180" height="180" rx="40" fill="#FF4D4D"/>
   
-  <!-- R block -->
+  <!-- M block -->
   <g transform="translate(38, 46) rotate(-8, 22, 22)">
     <rect width="44" height="44" rx="10" fill="white" opacity="0.95"/>
-    <text x="22" y="33" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="30" fill="#FF4D4D">R</text>
+    <text x="22" y="33" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="30" fill="#FF4D4D">M</text>
   </g>
   
-  <!-- C block -->
+  <!-- S block -->
   <g transform="translate(92, 44) rotate(6, 22, 22)">
     <rect width="44" height="44" rx="10" fill="#FFB800"/>
-    <text x="22" y="33" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="30" fill="#1E293B">C</text>
+    <text x="22" y="33" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="30" fill="#1E293B">S</text>
   </g>
   
-  <!-- ROYAL CROWN text -->
-  <text x="90" y="130" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="18" fill="white" letter-spacing="2">ROYAL CROWN</text>
+  <!-- MORYA SPORTS text -->
+  <text x="90" y="130" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="16" fill="white" letter-spacing="1.5">MORYA SPORTS</text>
   
-  <!-- Sparkle -->
+  <!-- Sparkle/Trophy/Star -->
   <g transform="translate(148, 30)">
     <polygon points="6,0 7.5,4.5 12,6 7.5,7.5 6,12 4.5,7.5 0,6 4.5,4.5" fill="#FFB800"/>
   </g>

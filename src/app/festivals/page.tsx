@@ -11,9 +11,9 @@ const FESTIVALS = [
   {
     id: 'diwali',
     name: 'Diwali',
-    tagline: 'Light Up Their Faces',
+    tagline: 'Celebrate with Champions',
     emoji: '🪔',
-    desc: 'Celebrate the Festival of Lights with the perfect toy gift for every child. From learning kits to board games — make this Diwali extra magical!',
+    desc: 'Celebrate the Festival of Lights with the perfect sports gear or trophies for tournament celebrations. From cricket kits to custom jerseys — make this Diwali extra special!',
     gradient: 'from-amber-500 via-orange-500 to-red-500',
     bgLight: 'bg-amber-50',
     bgDark: 'dark:bg-amber-950/20',
@@ -21,33 +21,33 @@ const FESTIVALS = [
     accent: 'text-amber-600 dark:text-amber-400',
     badge: 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300',
     coupon: 'DIWALI15',
-    couponDesc: '15% off on all toys above ₹799',
-    decorEmojis: ['🪔', '✨', '🎆', '🌟', '🎁'],
+    couponDesc: '15% off on sports equipment above ₹799',
+    decorEmojis: ['🪔', '🏆', '🥇', '🌟', '🏏'],
     countdownDays: 120,
   },
   {
     id: 'christmas',
-    name: 'Christmas',
-    tagline: 'Santa\'s Toy Workshop',
+    name: 'Winter Tournament',
+    tagline: 'Christmas & New Year Games',
     emoji: '🎄',
-    desc: 'Surprise the little ones with Christmas magic from Royal Crown! Premium toys, gift-wrapped and delivered express in Badlapur.',
+    desc: 'Celebrate the holiday season with Morya Sports! Premium sports gear, equipment, custom team jerseys, and championship trophies delivered express in Badlapur.',
     gradient: 'from-green-500 via-emerald-500 to-teal-600',
     bgLight: 'bg-green-50',
     bgDark: 'dark:bg-green-950/20',
     border: 'border-green-200 dark:border-green-900/40',
     accent: 'text-green-700 dark:text-green-400',
     badge: 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300',
-    coupon: 'XMAS20',
-    couponDesc: '20% off on soft toys & board games',
-    decorEmojis: ['🎄', '⛄', '🎅', '🎁', '❄️'],
+    coupon: 'WINTER20',
+    couponDesc: '20% off on football kits & gym gear',
+    decorEmojis: ['🎄', '⛄', '⚽', '🏆', '❄️'],
     countdownDays: 200,
   },
   {
     id: 'summer',
-    name: 'Summer Vacation',
-    tagline: 'Keep Kids Busy All Summer!',
+    name: 'Summer Coaching Camp',
+    tagline: 'Get Active This Summer!',
     emoji: '☀️',
-    desc: 'School is out! Make summer vacation unforgettable with educational kits, outdoor games, and creativity toys that keep kids engaged.',
+    desc: 'School is out! Make summer vacation active and healthy with high-quality cricket kits, badminton rackets, running shoes, and coaching accessories.',
     gradient: 'from-sky-400 via-blue-500 to-indigo-600',
     bgLight: 'bg-sky-50',
     bgDark: 'dark:bg-sky-950/20',
@@ -55,8 +55,8 @@ const FESTIVALS = [
     accent: 'text-sky-600 dark:text-sky-400',
     badge: 'bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300',
     coupon: 'SUMMER10',
-    couponDesc: '10% off on educational & STEM toys',
-    decorEmojis: ['☀️', '🌊', '🏖️', '🚀', '🎨'],
+    couponDesc: '10% off on cricket bats & badminton rackets',
+    decorEmojis: ['☀️', '🏏', '🏸', '🏃', '🥇'],
     countdownDays: 15,
   },
 ];
@@ -104,25 +104,25 @@ export default function FestivalsPage() {
 
       {/* Hero Header */}
       <section className="text-center space-y-4 py-8 relative overflow-hidden">
-        <div className="absolute inset-0 toy-grid-bg opacity-40" />
+        <div className="absolute inset-0 sports-grid-bg opacity-40" />
         {/* Floating emoji decorations */}
         <div className="absolute top-4 left-8 text-3xl animate-float-slow select-none opacity-60">🪔</div>
-        <div className="absolute top-2 right-12 text-3xl animate-float select-none opacity-60">🎄</div>
+        <div className="absolute top-2 right-12 text-3xl animate-float select-none opacity-60">🏆</div>
         <div className="absolute bottom-4 left-1/4 text-2xl animate-float-medium select-none opacity-50">☀️</div>
-        <div className="absolute bottom-2 right-1/4 text-2xl animate-bounce-soft select-none opacity-50">🎁</div>
+        <div className="absolute bottom-2 right-1/4 text-2xl animate-bounce-soft select-none opacity-50">🏏</div>
 
         <div className="relative z-10 space-y-4">
           <span className="inline-flex items-center space-x-2 px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-full text-xs font-bold text-primary animate-pulse-soft">
             <Sparkles size={13} className="animate-spin-slow" />
-            <span>Festival Season Campaigns</span>
+            <span>Festival & Tournament Campaigns</span>
           </span>
           <h1 className="text-4xl sm:text-5xl font-poppins font-black text-[var(--foreground)] tracking-tight">
             Celebrate Every{' '}
-            <span className="text-primary-playful drop-shadow-sm">Festival</span>
-            {' '}🎉
+            <span className="text-primary-playful drop-shadow-sm">Season</span>
+            {' '}🏆
           </h1>
           <p className="text-sm text-[var(--muted)] max-w-xl mx-auto leading-relaxed">
-            Special deals for every big celebration of the year. Gift-wrapped premium toys with express delivery across Badlapur.
+            Special deals for tournament seasons and festive sports meets. Quality gear and trophies with express delivery in Badlapur.
           </p>
         </div>
       </section>
@@ -193,7 +193,7 @@ export default function FestivalsPage() {
             <div className="p-8 space-y-5">
               <h3 className={`font-poppins font-bold text-base ${fest.accent} flex items-center space-x-2`}>
                 <Gift size={16} />
-                <span>Top {fest.name} Gift Picks</span>
+                <span>Top {fest.name} Picks</span>
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
                 {festProducts.map(product => (
@@ -209,7 +209,7 @@ export default function FestivalsPage() {
                   href="/shop"
                   className="inline-flex items-center space-x-2 px-6 py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-xl font-bold text-sm hover:scale-105 transition-transform"
                 >
-                  <span>Browse All {fest.name} Toys</span>
+                  <span>Browse All {fest.name} Sports Gear</span>
                   <Star size={14} />
                 </Link>
               </div>

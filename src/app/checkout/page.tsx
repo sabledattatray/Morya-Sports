@@ -27,7 +27,6 @@ export default function CheckoutPage() {
     return () => clearTimeout(timer);
   }, []);
 
-
   // Stepper state
   const [step, setStep] = useState(1);
   
@@ -49,7 +48,7 @@ export default function CheckoutPage() {
   const wrapCost = cart.reduce((acc, item) => acc + (item.giftWrap ? 30 * item.quantity : 0), 0);
   const shippingCost = shippingMethod === 'pickup' || subtotal > 999 ? 0 : 50;
   const grandTotal = subtotal + wrapCost + shippingCost;
-  const [orderId] = useState(() => 'TS-' + Math.floor(100000 + Math.random() * 900000));
+  const [orderId] = useState(() => 'MS-' + Math.floor(100000 + Math.random() * 900000));
 
   if (!mounted) {
     return (
@@ -118,7 +117,7 @@ export default function CheckoutPage() {
           <div>
             <h1 className="text-3xl font-poppins font-black text-success tracking-tight">Order Confirmed!</h1>
             <p className="text-sm text-[var(--muted)] mt-2">
-              Thank you for shopping local with Royal Crown Badlapur. Your order has been placed successfully.
+              Thank you for shopping local with Morya Sports Badlapur. Your order has been placed successfully.
             </p>
           </div>
 
@@ -157,7 +156,7 @@ export default function CheckoutPage() {
               Continue Shopping
             </Link>
             <a 
-              href={`https://wa.me/919112270222?text=Hi%20Royal%20Crown!%20I%20just%20placed%20order%20${orderId}%20online%20for%20delivery%20in%20Badlapur.%20Please%20verify.`}
+              href={`https://wa.me/918104812757?text=Hi%20Morya%20Sports!%20I%20just%20placed%20order%20${orderId}%20online%20for%20delivery%20in%20Badlapur.%20Please%20verify.`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 border border-success text-success hover:bg-green-50 dark:hover:bg-green-950/20 rounded-xl font-bold transition-all flex items-center justify-center space-x-1.5"
@@ -265,7 +264,7 @@ export default function CheckoutPage() {
                   <div className="space-y-3">
                     {([
                       { id: 'home', title: 'Local Home Delivery (Badlapur)', desc: 'Deliver directly to your doorstep in 24-48 hours. Free for orders above ₹999.', cost: subtotal > 999 ? 'FREE' : '₹50' },
-                      { id: 'pickup', title: 'Store Self Pickup', desc: 'Pick up your items from Shop No 05 - Nav Sai Krupa society, Gandhi Chowk, Badlapur East. Ready in 4 hours.', cost: 'FREE' }
+                      { id: 'pickup', title: 'Store Self Pickup', desc: 'Pick up your items from Shop No 15, Bebika Palace, Adarsh College Road, Badlapur East. Ready in 4 hours.', cost: 'FREE' }
                     ] as const).map((method) => (
                       <button
                         key={method.id}
@@ -418,7 +417,7 @@ export default function CheckoutPage() {
                 {/* Order Summary */}
                 <div className="bg-slate-950 p-4 rounded-2xl flex justify-between items-center">
                   <div>
-                    <div className="text-[10px] text-slate-500 font-bold uppercase">Pay To: Royal Crown</div>
+                    <div className="text-[10px] text-slate-500 font-bold uppercase">Pay To: Morya Sports</div>
                     <div className="text-xs text-slate-300 font-semibold">{phone}</div>
                   </div>
                   <div className="text-right">

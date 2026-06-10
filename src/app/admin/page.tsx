@@ -7,11 +7,9 @@ import {
   Clock, 
   ShoppingBag, 
   Plus, 
-  Trash2, 
   TrendingUp, 
   Users, 
   AlertTriangle,
-  Gift,
   Truck,
   MapPin,
   Bell,
@@ -31,11 +29,11 @@ export default function AdminPage() {
   const [newProdName, setNewProdName] = useState('');
   const [newProdPrice, setNewProdPrice] = useState(0);
   const [newProdStock, setNewProdStock] = useState(10);
-  const [newProdCategory, setNewProdCategory] = useState('Educational Toys');
+  const [newProdCategory, setNewProdCategory] = useState('Cricket');
 
   // Timings override states
   const [holidayMode, setHolidayMode] = useState(false);
-  const [closingTimeOverride, setClosingTimeOverride] = useState('10:00 PM');
+  const [closingTimeOverride, setClosingTimeOverride] = useState('09:00 PM');
 
   // Delivery Config States
   const [deliveryRadius, setDeliveryRadius] = useState(8);
@@ -46,9 +44,9 @@ export default function AdminPage() {
 
   // Orders Status states
   const [orders, setOrders] = useState([
-    { id: 'TS-482910', customer: 'Rahul Deshmukh', items: 'RC Rally Car (x1)', total: 2499, date: 'June 08', status: 'Shipped', phone: '9820012345' },
-    { id: 'TS-103948', customer: 'Amit Sharma', items: 'Hot Wheels 10-Car Pack (x1)', total: 999, date: 'June 09', status: 'Pending', phone: '9876543210' },
-    { id: 'TS-504938', customer: 'Sneha Patil', items: 'Smart Coding Robot Kit (x1)', total: 3499, date: 'June 09', status: 'Pending', phone: '9011234567' }
+    { id: 'MS-482910', customer: 'Rahul Deshmukh', items: 'SS Ton Cricket Bat (x1)', total: 3499, date: 'June 08', status: 'Shipped', phone: '9820012345' },
+    { id: 'MS-103948', customer: 'Amit Sharma', items: 'Badminton Racket (x1)', total: 799, date: 'June 09', status: 'Pending', phone: '9876543210' },
+    { id: 'MS-504938', customer: 'Sneha Patil', items: 'Custom Team Jersey (x2)', total: 998, date: 'June 09', status: 'Pending', phone: '9011234567' }
   ]);
 
   const lowStockItems = products.filter(p => p.stockCount <= LOW_STOCK_THRESHOLD && p.stockCount > 0);
@@ -76,11 +74,11 @@ export default function AdminPage() {
       rating: 5.0,
       reviewsCount: 0,
       ageGroup: 'All Ages',
-      brand: 'Custom Store Brand',
-      images: ['https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=600&q=80'],
+      brand: 'Custom Brand',
+      images: ['https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=600&q=80'],
       inStock: newProdStock > 0,
       stockCount: newProdStock,
-      description: 'Custom product added via Store Admin Panel.',
+      description: 'Custom sports product added via Store Admin Panel.',
       specifications: { 'Origin': 'Made in India' },
       deliveryDays: 2
     };
@@ -98,7 +96,7 @@ export default function AdminPage() {
 
   const handleWhatsAppNotify = (order: typeof orders[0]) => {
     const msg = encodeURIComponent(
-      `🎁 *Royal Crown Order Update*\n\nHi ${order.customer}! Your order *${order.id}* is now *${order.status}*.\n\nItems: ${order.items}\nTotal: ₹${order.total}\n\nFor queries call: 09112270222\nThank you for shopping with Royal Crown, Badlapur! 👑`
+      `🏆 *Morya Sports Order Update*\n\nHi ${order.customer}! Your order *${order.id}* is now *${order.status}*.\n\nItems: ${order.items}\nTotal: ₹${order.total}\n\nFor queries call: 08104812757\nThank you for shopping with Morya Sports, Badlapur! 🏆`
     );
     window.open(`https://wa.me/91${order.phone}?text=${msg}`, '_blank');
   };
@@ -235,7 +233,7 @@ export default function AdminPage() {
             <div className="space-y-1">
               <label className="text-xs font-bold text-[var(--foreground)] uppercase">Product Name</label>
               <input 
-                type="text" required placeholder="Smart Toy Box"
+                type="text" required placeholder="Smart Sports Gear"
                 value={newProdName} onChange={(e) => setNewProdName(e.target.value)}
                 className="w-full py-2 px-3 rounded-xl border border-[var(--border)] bg-[var(--background)] text-xs focus:ring-2 focus:ring-primary focus:outline-none"
               />
@@ -262,12 +260,16 @@ export default function AdminPage() {
               <label className="text-xs font-bold text-[var(--foreground)] uppercase">Category</label>
               <select value={newProdCategory} onChange={(e) => setNewProdCategory(e.target.value)}
                 className="w-full py-2 px-3 rounded-xl border border-[var(--border)] bg-[var(--background)] text-xs focus:outline-none">
-                <option value="Educational Toys">Educational Toys</option>
-                <option value="Remote Control Toys">Remote Control Toys</option>
-                <option value="Board Games">Board Games</option>
-                <option value="Hot Wheels">Hot Wheels</option>
-                <option value="Action Figures">Action Figures</option>
-                <option value="Soft Toys">Soft Toys</option>
+                <option value="Cricket">Cricket</option>
+                <option value="Football">Football</option>
+                <option value="Badminton">Badminton</option>
+                <option value="Jerseys & Sportswear">Jerseys & Sportswear</option>
+                <option value="Kabaddi & Wrestling">Kabaddi & Wrestling</option>
+                <option value="Athletics & Running">Athletics & Running</option>
+                <option value="Trophies & Medals">Trophies & Medals</option>
+                <option value="Gym & Fitness">Gym & Fitness</option>
+                <option value="Outdoor Sports">Outdoor Sports</option>
+                <option value="School Sports Kits">School Sports Kits</option>
               </select>
             </div>
 
@@ -345,7 +347,7 @@ export default function AdminPage() {
           <div className="flex items-center justify-between p-4 bg-[var(--background)] border border-[var(--border)] rounded-2xl shadow-sm">
             <div className="space-y-0.5">
               <h4 className="font-bold text-sm text-[var(--foreground)]">Store Holiday Mode</h4>
-              <p className="text-[10px] text-[var(--muted)] font-semibold">Toggles the storefront status to "Closed Now" for festivals/holidays.</p>
+              <p className="text-[10px] text-[var(--muted)] font-semibold">Toggles the storefront status to "Closed Now" for holidays or events.</p>
             </div>
             <input type="checkbox" checked={holidayMode} onChange={(e) => {
               setHolidayMode(e.target.checked);
@@ -354,15 +356,15 @@ export default function AdminPage() {
           </div>
 
           <div className="space-y-2">
-            <label className="text-xs font-bold text-[var(--foreground)] uppercase block">Override Standard Closing Hour (Tue-Sun)</label>
+            <label className="text-xs font-bold text-[var(--foreground)] uppercase block">Override Standard Closing Hour (Daily 9 AM - 9 PM)</label>
             <select value={closingTimeOverride} onChange={(e) => {
               setClosingTimeOverride(e.target.value);
               alert(`Closing hour updated to ${e.target.value}`);
             }} className="w-full py-2.5 px-3.5 rounded-xl border border-[var(--border)] bg-[var(--background)] text-sm focus:outline-none">
-              <option value="10:00 PM">10:00 PM (Standard)</option>
-              <option value="09:00 PM">09:00 PM (Early Closing)</option>
-              <option value="08:00 PM">08:00 PM (Festival Early)</option>
-              <option value="11:00 PM">11:00 PM (Extended Timing)</option>
+              <option value="09:00 PM">09:00 PM (Standard)</option>
+              <option value="08:00 PM">08:00 PM (Early Closing)</option>
+              <option value="07:00 PM">07:00 PM (Festival Early)</option>
+              <option value="10:00 PM">10:00 PM (Extended Timing)</option>
             </select>
           </div>
         </div>

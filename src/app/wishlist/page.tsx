@@ -40,10 +40,10 @@ export default function WishlistPage() {
         </div>
         <div>
           <h1 className="text-3xl font-poppins font-extrabold text-[var(--foreground)]">Your Wishlist is Empty</h1>
-          <p className="text-sm text-[var(--muted)] mt-2">Tap the heart on toys you love to save them here.</p>
+          <p className="text-sm text-[var(--muted)] mt-2">Tap the heart on products you love to save them here.</p>
         </div>
         <Link href="/shop" className="inline-block px-8 py-3.5 bg-primary hover:bg-primary-hover text-white rounded-2xl font-bold transition-all shadow-md">
-          Find Toys to Add
+          Find Gear to Add
         </Link>
       </div>
     );
@@ -53,7 +53,7 @@ export default function WishlistPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div className="mb-8 space-y-1">
         <h1 className="text-3xl font-poppins font-black text-[var(--foreground)] tracking-tight">Saved Wishlist</h1>
-        <p className="text-xs text-[var(--muted)]">Manage your favorite toys and move them to cart anytime</p>
+        <p className="text-xs text-[var(--muted)]">Manage your favorite products and move them to cart anytime</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

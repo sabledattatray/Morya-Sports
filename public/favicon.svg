@@ -2,16 +2,16 @@
   <!-- Background circle -->
   <circle cx="32" cy="32" r="30" fill="#FFFDF9" stroke="#F1ECE4" stroke-width="2"/>
   
-  <!-- R block (red/primary) - tilted left -->
+  <!-- M block (red/primary) - tilted left -->
   <g transform="translate(10, 18) rotate(-8, 12, 12)">
     <rect width="20" height="20" rx="5" fill="#FF4D4D" />
-    <text x="10" y="15.5" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="14" fill="white">R</text>
+    <text x="10" y="15.5" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="14" fill="white">M</text>
   </g>
   
-  <!-- C block (amber/secondary) - tilted right -->
+  <!-- S block (amber/secondary) - tilted right -->
   <g transform="translate(26, 16) rotate(6, 12, 12)">
     <rect width="20" height="20" rx="5" fill="#FFB800" />
-    <text x="10" y="15.5" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="14" fill="#1E293B">C</text>
+    <text x="10" y="15.5" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="14" fill="#1E293B">S</text>
   </g>
   
   <!-- Small sparkle star -->

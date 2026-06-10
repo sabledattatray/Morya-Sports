@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
           <span className="text-[var(--foreground)]">Privacy Policy</span>
         </div>
         <h1 className="text-3xl font-poppins font-black text-[var(--foreground)] tracking-tight">Privacy Policy</h1>
-        <p className="text-xs text-[var(--muted)]">How we protect your personal information at Royal Crown</p>
+        <p className="text-xs text-[var(--muted)]">How we protect your personal information at Morya Sports</p>
       </div>
 
       <div className="border border-[var(--border)] bg-[var(--card)] rounded-3xl p-6 sm:p-8 card-shadow space-y-8 text-sm text-[var(--foreground)] leading-relaxed">
@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
           <section className="space-y-2">
             <h2 className="font-poppins font-bold text-base text-primary">1. Personal Information Collected</h2>
             <p>
-              When you purchase toys online, check out, or contact us, we collect standard customer coordinates necessary to arrange your orders and delivery:
+              When you purchase products online, check out, or contact us, we collect standard customer coordinates necessary to arrange your orders and delivery:
             </p>
             <ul className="list-disc pl-5 space-y-1 text-xs text-[var(--muted)]">
               <li>Full Name</li>

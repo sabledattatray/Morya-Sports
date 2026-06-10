@@ -57,7 +57,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
         <div className="p-6 border-b border-[var(--border)] flex items-center justify-between bg-[var(--card)]">
           <div className="flex items-center space-x-2.5">
             <ShoppingBag className="text-primary animate-pulse" size={22} />
-            <h3 className="font-poppins font-black text-lg text-[var(--foreground)]">Your Toy Cart</h3>
+            <h3 className="font-poppins font-black text-lg text-[var(--foreground)]">Your Sports Cart</h3>
             <span className="bg-primary/10 text-primary text-[11px] font-bold px-2 py-0.5 rounded-full">
               {totalItems} items
             </span>
@@ -132,7 +132,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                           onChange={() => toggleGiftWrap(item.product.id)}
                           className="w-3.5 h-3.5 rounded text-primary focus:ring-primary border-[var(--border)]"
                         />
-                        <span>Premium wrapping (+₹30) 🎁</span>
+                        <span>Wrapping / Custom tag (+₹30) 🎁</span>
                       </label>
                       <button 
                         onClick={() => removeFromCart(item.product.id)}
@@ -146,7 +146,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                 </div>
               ))}
 
-              {/* GREETING CARD BUILDER BLOCK */}
+              {/* CUSTOM NOTE BUILDER BLOCK */}
               <div className="border border-dashed border-[var(--border)] bg-[var(--card)] p-4 rounded-3xl mt-4 space-y-3">
                 <label className="flex items-center space-x-2 text-xs font-bold text-[var(--foreground)] cursor-pointer select-none">
                   <input 
@@ -156,7 +156,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                     className="w-4 h-4 rounded text-primary focus:ring-primary border-[var(--border)]"
                   />
                   <span className="flex items-center gap-1.5">
-                    Add Birthday Greeting Card (+₹10) 📝
+                    Add custom note / gift tag (+₹10) 📝
                   </span>
                 </label>
 
@@ -165,7 +165,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                     <input 
                       type="text"
                       maxLength={80}
-                      placeholder="Type birthday message (e.g. Happy Birthday Rahul!)"
+                      placeholder="Type your message (e.g. Best of luck team!)"
                       value={globalCardMsg}
                       onChange={(e) => setGlobalCardMsg(e.target.value)}
                       className="w-full py-2 px-3 rounded-xl border border-[var(--border)] bg-[var(--background)] text-xs placeholder:text-[var(--muted)] focus:outline-none focus:ring-2 focus:ring-primary"
@@ -174,16 +174,16 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                     {/* VIRTUAL CARD PREVIEW */}
                     <div className="relative border-2 border-amber-200 bg-amber-50/50 rounded-2xl p-4 overflow-hidden shadow-inner">
                       {/* Decorative elements */}
-                      <div className="absolute top-1 left-2 text-base opacity-40 select-none">🎈</div>
-                      <div className="absolute bottom-1 right-2 text-base opacity-40 select-none">🎂</div>
+                      <div className="absolute top-1 left-2 text-base opacity-40 select-none">🏆</div>
+                      <div className="absolute bottom-1 right-2 text-base opacity-40 select-none">🥇</div>
                       <div className="absolute top-2 right-4 text-xs text-secondary animate-pulse opacity-50">★</div>
                       
                       <div className="text-center space-y-1 relative z-10">
                         <div className="text-[9px] font-black text-amber-600 uppercase tracking-widest">
-                          Greeting Card Preview
+                          Custom Note Preview
                         </div>
                         <p className="font-serif italic font-extrabold text-primary-playful text-sm min-h-[30px] leading-relaxed break-words px-2 pt-1 text-center">
-                          &ldquo;{globalCardMsg || 'Happy Birthday! Wishing you fun & learning!'}&rdquo;
+                          &ldquo;{globalCardMsg || 'All the best! Play like a champion!'}&rdquo;
                         </p>
                       </div>
                     </div>
@@ -199,7 +199,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
               <div>
                 <h4 className="font-poppins font-bold text-base text-[var(--foreground)]">Your cart is empty</h4>
                 <p className="text-xs text-[var(--muted)] mt-1 max-w-[200px] mx-auto">
-                  Browse our premium collections and add toys to get started!
+                  Browse our premium collections and add sports items to get started!
                 </p>
               </div>
               <button 
@@ -222,13 +222,13 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
               </div>
               {wrapTotal > 0 && (
                 <div className="flex justify-between text-[var(--muted)]">
-                  <span>Gift wrapping fee:</span>
+                  <span>Custom wrapping fee:</span>
                   <span>₹{wrapTotal}</span>
                 </div>
               )}
               {showCardBuilder && (
                 <div className="flex justify-between text-[var(--muted)]">
-                  <span>Greeting Card fee:</span>
+                  <span>Custom Note fee:</span>
                   <span>₹{cardFee}</span>
                 </div>
               )}

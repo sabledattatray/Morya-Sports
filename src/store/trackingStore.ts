@@ -62,28 +62,28 @@ function buildEvents(
     {
       status: 'confirmed',
       label: 'Order Confirmed',
-      description: 'Royal Crown has confirmed your order and assigned it for packing.',
+      description: 'Morya Sports has confirmed your order and assigned it for packing.',
     },
     {
       status: 'packed',
       label: 'Packed & Ready',
       description: shippingMethod === 'pickup'
-        ? 'Your order is packed. Ready for self-pickup at Gandhi Chowk, Badlapur East.'
+        ? 'Your order is packed. Ready for self-pickup at Bebika Palace, Adarsh College Road, Badlapur East.'
         : 'Your order is securely packed and ready to be dispatched for delivery.',
     },
     {
       status: 'out_for_delivery',
       label: shippingMethod === 'pickup' ? 'Ready for Pickup' : 'Out for Delivery',
       description: shippingMethod === 'pickup'
-        ? 'Your order is ready at the store. Visit us at Shop No 05 - Nav Sai Krupa society, Gandhi Chowk.'
+        ? 'Your order is ready at the store. Visit us at Shop No 15, Bebika Palace, Adarsh College Road, Badlapur East.'
         : 'Our delivery partner is on the way to your address in Badlapur.',
     },
     {
       status: 'delivered',
       label: shippingMethod === 'pickup' ? 'Picked Up' : 'Delivered',
       description: shippingMethod === 'pickup'
-        ? 'Order successfully picked up. Thank you for visiting Royal Crown!'
-        : 'Order delivered successfully! Thank you for shopping with Royal Crown! 👑',
+        ? 'Order successfully picked up. Thank you for visiting Morya Sports!'
+        : 'Order delivered successfully! Thank you for shopping with Morya Sports! 🏆',
     },
   ];
 
@@ -102,36 +102,36 @@ function buildEvents(
 // Pre-seeded demo orders for the track-order demo
 const RAW_ORDERS = [
   {
-    orderId: 'TS-482910',
+    orderId: 'MS-482910',
     customerName: 'Rahul Deshmukh',
     customerPhone: '9820012345',
     customerAddress: 'Flat 402, Shiv Shakti Tower, Katrap Road, Badlapur East, MH 421503',
-    items: [{ name: 'Super High-Speed RC Rally Car', qty: 1, price: 2499 }],
-    grandTotal: 2499,
+    items: [{ name: 'SS Ton Reserve Edition Cricket Bat', qty: 1, price: 3499 }],
+    grandTotal: 3499,
     paymentMethod: 'razorpay' as const,
     shippingMethod: 'home' as const,
     placedAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
     currentStatus: 'delivered' as const,
   },
   {
-    orderId: 'TS-103948',
+    orderId: 'MS-103948',
     customerName: 'Amit Sharma',
     customerPhone: '9876543210',
     customerAddress: 'B-12, Sunrise Heights, Station Road, Badlapur West, MH 421503',
-    items: [{ name: 'Hot Wheels 10-Car Pack', qty: 1, price: 999 }],
-    grandTotal: 999,
+    items: [{ name: 'Yonex GR 303i Badminton Racket', qty: 1, price: 799 }],
+    grandTotal: 799,
     paymentMethod: 'cod' as const,
     shippingMethod: 'home' as const,
     placedAt: new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString(),
     currentStatus: 'out_for_delivery' as const,
   },
   {
-    orderId: 'TS-504938',
+    orderId: 'MS-504938',
     customerName: 'Sneha Patil',
     customerPhone: '9011234567',
-    customerAddress: 'Shop No 05 - Nav Sai Krupa society, Gandhi Chowk, Badlapur East, MH 421503',
-    items: [{ name: 'Smart Coding Robot Kit', qty: 1, price: 3499 }],
-    grandTotal: 3499,
+    customerAddress: 'Flat 101, Nav Sai Krupa Society, Katrap Road, Badlapur East, MH 421503',
+    items: [{ name: 'Custom Printed Sports Jersey (Team Order)', qty: 2, price: 499 }],
+    grandTotal: 998,
     paymentMethod: 'razorpay' as const,
     shippingMethod: 'pickup' as const,
     placedAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
@@ -143,8 +143,6 @@ const DEMO_ORDERS: TrackedOrder[] = RAW_ORDERS.map(o => ({
   ...o,
   events: buildEvents(o.currentStatus, o.placedAt, o.shippingMethod),
 }));
-
-
 
 export const useTrackingStore = create<TrackingStore>()(
   persist(
@@ -180,6 +178,6 @@ export const useTrackingStore = create<TrackingStore>()(
         return get().orders.find(o => o.orderId === orderId);
       },
     }),
-    { name: 'royal-crown-tracking' }
+    { name: 'morya-sports-tracking' }
   )
 );

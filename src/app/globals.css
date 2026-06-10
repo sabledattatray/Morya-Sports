@@ -200,12 +200,12 @@
   background: var(--muted);
 }
 
-.toy-grid-bg {
+.sports-grid-bg {
   background-image: radial-gradient(var(--border) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
-.toy-bubble {
+.sports-bubble {
   border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
 }
 

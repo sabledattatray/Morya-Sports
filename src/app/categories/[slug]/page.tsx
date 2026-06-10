@@ -28,7 +28,7 @@ export default function CategoryPage({ params }: PageProps) {
         <h1 className="text-2xl font-bold text-[var(--foreground)]">Category Not Found</h1>
         <p className="text-[var(--muted)] mt-2">The product collection you are looking for does not exist.</p>
         <Link href="/shop" className="inline-block mt-6 px-6 py-2.5 bg-primary text-white rounded-xl font-bold">
-          View All Toys
+          View All Products
         </Link>
       </div>
     );
@@ -54,7 +54,7 @@ export default function CategoryPage({ params }: PageProps) {
             {categoryData.name} Collection
           </h1>
           <p className="text-sm text-[var(--muted)] max-w-2xl leading-relaxed">
-            {categoryData.desc} Discover premium toys, strategic guides, and age-appropriate options. Free local delivery available within Badlapur.
+            {categoryData.desc} Discover premium equipment, athletic wear, and customized team products. Free local delivery available within Badlapur.
           </p>
         </div>
       </div>
@@ -80,7 +80,7 @@ export default function CategoryPage({ params }: PageProps) {
             <p className="text-xs text-[var(--muted)] mt-1 max-w-xs">We are currently stocking up our online inventory for {categoryData.name}. In the meantime, message us on WhatsApp to check store inventory!</p>
           </div>
           <a 
-            href={`https://wa.me/919112270222?text=Hi%20Royal%20Crown,%20do%20you%20have%20stock%20for%20items%20in%20the%20${encodeURIComponent(categoryData.name)}%20category?`}
+            href={`https://wa.me/918104812757?text=Hi%20Morya%20Sports,%20do%20you%20have%20stock%20for%20items%20in%20the%20${encodeURIComponent(categoryData.name)}%20category?`}
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-2.5 bg-success hover:bg-green-600 text-white rounded-xl text-xs font-bold transition-all shadow"

@@ -33,7 +33,7 @@ interface CartStore {
 
 // Generate a unique referral code for the user
 function generateReferralCode(): string {
-  return 'RC-' + Math.random().toString(36).substring(2, 8).toUpperCase();
+  return 'MS-' + Math.random().toString(36).substring(2, 8).toUpperCase();
 }
 
 export const useCartStore = create<CartStore>()(
@@ -43,8 +43,8 @@ export const useCartStore = create<CartStore>()(
       wishlist: [],
       loyaltyPoints: 120, // Start with some demo points
       loyaltyHistory: [
-        { date: 'May 12, 2026', description: 'Order RC-482910 completed', points: 250 },
-        { date: 'April 02, 2026', description: 'Order RC-103948 completed', points: 100 },
+        { date: 'May 12, 2026', description: 'Order MS-482910 completed', points: 250 },
+        { date: 'April 02, 2026', description: 'Order MS-103948 completed', points: 100 },
         { date: 'March 20, 2026', description: 'Google Review bonus', points: 50 },
         { date: 'March 10, 2026', description: 'Welcome bonus', points: 50 },
         { date: 'March 10, 2026', description: 'Redeemed at checkout', points: -330 },
@@ -134,7 +134,7 @@ export const useCartStore = create<CartStore>()(
       },
     }),
     {
-      name: 'royal-crown-storage',
+      name: 'morya-sports-storage',
     }
   )
 );

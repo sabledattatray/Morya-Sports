@@ -1,61 +1,37 @@
-# Royal Crown Gifts Toys Perfumes 👑
+# Morya Sports Badlapur 🏆
 
-**Badlapur's Premium Online Gift, Toy & Perfume Store** — A fully-featured Next.js 16 e-commerce website built for Royal Crown Gifts Toys Perfumes ®️, Badlapur East, Maharashtra.
-
-> 🚀 **Live Demo:** [royalcrown.vercel.app](https://royalcrown.vercel.app) *(deploy to see)*
+**Badlapur's Premier Online Sports Equipment & Sportswear Store** — A fully-featured Next.js 16 e-commerce website built for Morya Sports Badlapur ®️, Bebika Palace, Adarsh College Road, Badlapur East, Maharashtra.
 
 ---
 
 ## ✨ Features
 
 ### 🛒 Shopping Experience
-- Product catalog with search, category filters, and age-group filters
-- Quick View modal with image gallery
-- Add to cart with **particle burst animations** + floating quantity indicators
-- Wishlist with persistent state
-- Cart sidebar drawer with gift wrap toggle and greeting card builder
+- Product catalog with sports categories (Cricket, Football, Badminton, Gym, Trophies, Custom Jerseys, and more)
+- Quick View modal with product specifications
+- Custom order options with name printing or custom tag selection
+- Persistent Cart & Wishlist state using Zustand
+- WhatsApp Product Enquiry button on all detail views
 
 ### 💳 Checkout & Payments
 - 3-step checkout (Address → Shipping → Payment)
-- **Simulated Razorpay** gateway with QR code scan
+- **Simulated Razorpay** payment gateway with UPI QR Code scan
 - Cash on Delivery (COD) option
-- Coupon code system (`DIWALI15`, `XMAS20`)
+- Coupon code discount system (`SPORTS10`, `TEAM20`)
 - Local home delivery + store pickup options
-- **GST Invoice generation** (printable, GSTIN, CGST/SGST breakdown)
+- **Printable GST Invoice** with automatic SGST/CGST calculations
 
 ### 📦 Order Tracking
-- Real-time order tracking at `/track-order`
-- Animated step-by-step timeline (Placed → Confirmed → Packed → Out for Delivery → Delivered)
-- WhatsApp support button on tracking page
-- Google Review CTA on delivery confirmation
+- Real-time order tracking status page at `/track-order`
+- Live interactive status progression timeline
+- Dynamic WhatsApp integration for ordering and verification
 
-### 🎁 Gift & Festival Features
-- **Gift Finder Wizard** — 3-step quiz (age, budget, interest) with curated recommendations
-- **Festival Campaign Pages** — Diwali 🪔, Christmas 🎄, Summer Vacation ☀️ with live countdown timers
-- Birthday Greeting Card builder in cart
-
-### 👤 Customer Account
-- Order history, saved addresses, notification preferences
-- **Loyalty Points** — earn 1 point per ₹10 spent, redeem 100 pts = ₹10 off
-- **Refer & Earn** — unique referral link, WhatsApp sharing
-
-### 🏪 Admin Dashboard
-- Inventory management with **low-stock alerts** (≤5 units highlighted in amber/red)
-- Order status management with **WhatsApp customer notification** button
-- Analytics chart (weekly orders)
-- Store timings override & holiday mode
-- **Delivery radius configuration** (radius, base fee, free threshold, window)
-
-### 🗺️ Store Info
-- Live Google Maps embed (dark mode aware)
-- Real-time store open/closed status based on business hours
-- WhatsApp floating button
-
-### 🎨 Design
-- Premium warm cream / dark slate dual theme
-- Animated block logo (R·C building blocks)
-- Micro-animations: particle bursts, floating sparkles, card glow effects
-- Fully responsive (mobile-first)
+### 🏪 Admin Panel Dashboard
+- Store management dashboard at `/admin`
+- Live inventory tracker with low stock alerts (≤5 units highlighted)
+- Timings manager with holiday mode & closing hour override
+- Local delivery configuration (radius, base fees, free thresholds, windows)
+- Simulated orders status update console with one-click WhatsApp notification trigger
 
 ---
 
@@ -63,27 +39,22 @@
 
 | Layer | Technology |
 |---|---|
-| Framework | Next.js 16.2 (App Router) |
+| Framework | Next.js 16 (App Router) |
 | Language | TypeScript |
 | Styling | Tailwind CSS v4 |
 | State | Zustand (with `persist`) |
 | Fonts | Google Fonts — Poppins + Inter |
 | Icons | Lucide React |
-| Animations | CSS Keyframes + Tailwind utilities |
 
 ---
 
 ## 🚀 Getting Started
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/royal-crown.git
-cd royal-crown
-
-# 2. Install dependencies
+# 1. Install dependencies
 npm install
 
-# 3. Run dev server
+# 2. Run dev server
 npm run dev
 ```
 
@@ -91,68 +62,16 @@ Open [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 📦 Deploy to Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/royal-crown)
-
-Or manually:
-```bash
-npm install -g vercel
-vercel --prod
-```
-
-**No environment variables required** — all data is static/mock.
-
----
-
-## 📁 Project Structure
-
-```
-src/
-├── app/                  # Next.js App Router pages
-│   ├── page.tsx          # Homepage
-│   ├── shop/             # Product listing + detail
-│   ├── cart/             # Cart page
-│   ├── checkout/         # Checkout wizard + payment
-│   ├── track-order/      # Order tracking
-│   ├── account/          # User account, loyalty, referral
-│   ├── festivals/        # Festival campaign pages
-│   ├── admin/            # Store admin dashboard
-│   └── ...
-├── components/           # Reusable components
-│   ├── Navbar.tsx
-│   ├── Footer.tsx
-│   ├── ProductCard.tsx
-│   ├── CartDrawer.tsx
-│   ├── GiftFinderWizard.tsx
-│   ├── GSTInvoice.tsx
-│   └── ...
-├── store/                # Zustand stores
-│   ├── cartStore.ts      # Cart, wishlist, loyalty points
-│   └── trackingStore.ts  # Order tracking
-│   └── timingsStore.ts   # Store timings override
-├── data/
-│   └── mockData.ts       # Product catalog data
-├── context/
-│   └── ThemeContext.tsx  # Dark/light mode
-└── utils/
-│   └── timings.ts        # Store hours logic
-```
-
----
-
 ## 🏪 Store Information
 
-**Royal Crown Gifts Toys Perfumes ®️**  
-Shop No 05 - Nav Sai Krupa society Opposite ZP Marathi school Gandhi Chowk, East, Badlapur, Maharashtra 421503  
-📞 +91 91122 70222  
-📧 royalcrowngiftsbadlapur@gmail.com  
+**Morya Sports Badlapur ®️**  
+Shop No 15, Bebika Palace, Adarsh College Road, Badlapur East, Maharashtra 421503  
+📞 08104812757  
+📧 moryasportsbadlapur@gmail.com  
 
 ---
 
 ## 📄 License
 
-This project is a custom-built commercial website for **Royal Crown Gifts Toys Perfumes ®️**.  
-© 2026 Royal Crown. All rights reserved.
-
-Built with ❤️ by [Datta Sable](https://dattasble.com)
+This project is a custom-built commercial website for **Morya Sports Badlapur ®️**.  
+© 2026 Morya Sports. All rights reserved.

@@ -14,7 +14,7 @@ export default function TermsOfServicePage() {
           <span className="text-[var(--foreground)]">Terms of Service</span>
         </div>
         <h1 className="text-3xl font-poppins font-black text-[var(--foreground)] tracking-tight">Terms of Service</h1>
-        <p className="text-xs text-[var(--muted)]">Operating rules and agreements for shopping at Royal Crown</p>
+        <p className="text-xs text-[var(--muted)]">Operating rules and agreements for shopping at Morya Sports</p>
       </div>
 
       <div className="border border-[var(--border)] bg-[var(--card)] rounded-3xl p-6 sm:p-8 card-shadow space-y-8 text-sm text-[var(--foreground)] leading-relaxed">
@@ -25,7 +25,7 @@ export default function TermsOfServicePage() {
             <Scale size={24} className="text-primary mt-0.5 flex-shrink-0" />
             <div>
               <h3 className="font-poppins font-bold text-sm">Legal Framework</h3>
-              <p className="text-xs text-[var(--muted)] mt-1">These terms define the transactional rules between Royal Crown and you as a shopper.</p>
+              <p className="text-xs text-[var(--muted)] mt-1">These terms define the transactional rules between Morya Sports and you as a shopper.</p>
             </div>
           </div>
           <div className="p-4 bg-[var(--background)] border border-[var(--border)] rounded-2xl flex items-start space-x-3">
@@ -42,21 +42,21 @@ export default function TermsOfServicePage() {
           <section className="space-y-2">
             <h2 className="font-poppins font-bold text-base text-primary">1. Agreement to Terms</h2>
             <p>
-              By accessing our website and buying products from Royal Crown, you agree to comply with and be bound by these Terms of Service. If you disagree, please do not use our services.
+              By accessing our website and buying products from Morya Sports, you agree to comply with and be bound by these Terms of Service. If you disagree, please do not use our services.
             </p>
           </section>
 
           <section className="space-y-2">
             <h2 className="font-poppins font-bold text-base text-primary">2. Pricing & Product Accuracy</h2>
             <p>
-              We sell premium gifts, toys, and perfumes. While we strive to show accurate inventory levels, specifications, and prices (including discounts), typographical errors or systems delay may occur. In such events, Royal Crown reserves the right to cancel or request verification on orders before delivery.
+              We sell sports equipment, sportswear, custom jerseys and trophies. While we strive to show accurate inventory levels, specifications, and prices (including discounts), typographical errors or systems delay may occur. In such events, Morya Sports reserves the right to cancel or request verification on orders before delivery.
             </p>
           </section>
 
           <section className="space-y-2">
-            <h2 className="font-poppins font-bold text-base text-primary">3. Bulk Orders & Custom Gift Packaging</h2>
+            <h2 className="font-poppins font-bold text-base text-primary">3. Bulk Orders & Custom Jersey Printing</h2>
             <p>
-              Orders of return gifts or wholesale items (10 pieces or more) require a minimum processing time of **48 hours**. Bulk purchases cannot be canceled once packaging customization (such as names or printing tags) has commenced.
+              Orders of custom jerseys or bulk trophies require a minimum processing time of **5–7 working days**. Custom printed team jerseys cannot be canceled once design sublimation/printing has commenced.
             </p>
           </section>
 

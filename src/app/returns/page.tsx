@@ -25,14 +25,14 @@ export default function ReturnsRefundsPage() {
             <RotateCcw size={24} className="text-primary mt-0.5 flex-shrink-0" />
             <div>
               <h3 className="font-poppins font-bold text-sm">7-Day Easy Return</h3>
-              <p className="text-xs text-[var(--muted)] mt-1">Return unused toys in their original packaging within 7 days of delivery.</p>
+              <p className="text-xs text-[var(--muted)] mt-1">Return unused sports products in their original packaging within 7 days of delivery.</p>
             </div>
           </div>
           <div className="p-4 bg-[var(--background)] border border-[var(--border)] rounded-2xl flex items-start space-x-3">
             <ShieldCheck size={24} className="text-secondary mt-0.5 flex-shrink-0" />
             <div>
               <h3 className="font-poppins font-bold text-sm">Defect Protection</h3>
-              <p className="text-xs text-[var(--muted)] mt-1">Got a broken toy or missing parts? We will replace it instantly with zero questions.</p>
+              <p className="text-xs text-[var(--muted)] mt-1">Got a defective product or missing parts? We will replace it instantly with zero questions.</p>
             </div>
           </div>
         </div>
@@ -42,19 +42,19 @@ export default function ReturnsRefundsPage() {
           <section className="space-y-2">
             <h2 className="font-poppins font-bold text-base text-primary">1. Return Eligibility Window</h2>
             <p>
-              We want your kids to love their play items! If you change your mind, we accept returns on toys within <strong>7 days</strong> of purchase/delivery, provided the item is unused, unopened, and in its original retail packaging with all seals intact.
+              We want you to love your sports gear! If you change your mind, we accept returns on items within <strong>7 days</strong> of purchase/delivery, provided the item is unused, and in its original packaging with all parts intact.
             </p>
           </section>
 
           <section className="space-y-2">
             <h2 className="font-poppins font-bold text-base text-primary">2. Non-Returnable Items</h2>
             <p>
-              Due to hygiene and safety standards, certain categories are non-returnable once opened:
+              Certain categories are non-returnable once opened or custom-made:
             </p>
             <ul className="list-disc pl-5 space-y-1 text-xs text-[var(--muted)]">
-              <li>Teethers, baby rattles, and pacifiers.</li>
-              <li>Customized birthday return gift bags and custom ribbons.</li>
-              <li>Products showing clear signs of physical wear, play, or water exposure.</li>
+              <li>Custom printed team jerseys and customized trophies.</li>
+              <li>Items showing clear signs of physical play (e.g. used cricket bats, worn shoes).</li>
+              <li>Products with broken tags or original packaging missing.</li>
             </ul>
           </section>
 
@@ -64,7 +64,7 @@ export default function ReturnsRefundsPage() {
               You can return items in two convenient ways:
             </p>
             <ul className="list-disc pl-5 space-y-1 text-xs text-[var(--muted)]">
-              <li><strong>In-Store Drop:</strong> Bring the item directly to our store (Shop No 05 - Nav Sai Krupa society, Gandhi Chowk, Badlapur East) along with the bill. This is the fastest method, and exchanges can be processed instantly.</li>
+              <li><strong>In-Store Drop:</strong> Bring the item directly to our store (Shop No 15, Bebika Palace, Adarsh College Road, Badlapur East) along with the bill. This is the fastest method, and exchanges can be processed instantly.</li>
               <li><strong>Local Pickup:</strong> Request a local courier pickup through WhatsApp. A pickup charge of ₹50 may apply.</li>
             </ul>
           </section>

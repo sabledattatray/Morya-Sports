@@ -42,7 +42,7 @@ export default function ShippingPolicyPage() {
           <section className="space-y-2">
             <h2 className="font-poppins font-bold text-base text-primary">1. Local Delivery in Badlapur</h2>
             <p>
-              As Badlapur&apos;s favorite local boutique, we operate our own direct home delivery network to serve local families quickly. We deliver to all areas across Badlapur East, Badlapur West, Katrap, Belavali, Shirgaon, and Kharvai.
+              As Badlapur&apos;s favorite sports shop, we operate our own direct home delivery network to serve local athletes and clubs quickly. We deliver to all areas across Badlapur East, Badlapur West, Katrap, Belavali, Shirgaon, and Kharvai.
             </p>
           </section>
 
@@ -51,14 +51,14 @@ export default function ShippingPolicyPage() {
             <ul className="list-disc pl-5 space-y-1 text-xs text-[var(--muted)]">
               <li><strong>Orders Above ₹999:</strong> FREE Delivery anywhere within Badlapur limit.</li>
               <li><strong>Orders Below ₹999:</strong> A flat delivery charge of ₹50 applies.</li>
-              <li><strong>Store Pickup:</strong> Always free. You can choose &quot;Store Self Pickup&quot; at checkout and collect your pre-packed order in 4 hours from Gandhi Chowk (Nav Sai Krupa society).</li>
+              <li><strong>Store Pickup:</strong> Always free. You can choose &quot;Store Self Pickup&quot; at checkout and collect your pre-packed order in 4 hours from Bebika Palace, Adarsh College Road, Badlapur East.</li>
             </ul>
           </section>
 
           <section className="space-y-2">
             <h2 className="font-poppins font-bold text-base text-primary">3. Delivery Timings & Schedule</h2>
             <p>
-              Orders are dispatched twice daily (12:00 PM and 6:00 PM). Local orders are generally delivered within 24 to 48 hours. If you require urgent same-day delivery for a birthday party, please contact us directly on WhatsApp after placing your order, and we will do our best to accommodate.
+              Orders are dispatched twice daily (12:00 PM and 6:00 PM). Local orders are generally delivered within 24 to 48 hours. If you require urgent same-day delivery for a match or tournament, please contact us directly on WhatsApp after placing your order, and we will do our best to accommodate.
             </p>
           </section>
 

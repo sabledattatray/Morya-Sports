@@ -15,7 +15,7 @@ interface GSTInvoiceProps {
   onClose: () => void;
 }
 
-const STORE_GSTIN = '27AAHFT1234M1ZF'; // Demo GSTIN (Maharashtra code 27)
+const STORE_GSTIN = '27XXXXXX1234M1ZF'; // Demo GSTIN – update with actual GSTIN
 const GST_RATE = 18;
 
 export default function GSTInvoice({
@@ -71,14 +71,14 @@ export default function GSTInvoice({
           <div className="flex justify-between items-start border-b-2 border-slate-900 pb-6">
             <div className="space-y-1">
               <div className="text-2xl font-poppins font-black tracking-tight text-slate-900">
-                ROYAL <span className="text-primary">CROWN</span>
+                MORYA <span className="text-primary">SPORTS</span>
               </div>
               <div className="text-xs text-slate-500 leading-relaxed">
-                Shop No 05 - Nav Sai Krupa society,<br />
-                Opposite ZP Marathi school, Gandhi Chowk,<br />
-                East, Badlapur, Maharashtra 421503<br />
-                Ph: 09112270222<br />
-                Email: royalcrown.fgt@gmail.com
+                Shop No 15, Bebika Palace,<br />
+                Adarsh College Road,<br />
+                Badlapur East, Maharashtra 421503<br />
+                Ph: 08104812757<br />
+                Email: moryasportsbadlapur@gmail.com
               </div>
               <div className="text-xs font-bold text-slate-700 mt-2">GSTIN: {STORE_GSTIN}</div>
             </div>
@@ -124,7 +124,7 @@ export default function GSTInvoice({
                   <td className="py-2.5 px-3 text-slate-500">{idx + 1}</td>
                   <td className="py-2.5 px-3">
                     <div className="font-semibold text-slate-800">{item.product.name}</div>
-                    <div className="text-[10px] text-slate-400">{item.product.category} | HSN: 9503</div>
+                    <div className="text-[10px] text-slate-400">{item.product.category} | HSN: 9506</div>
                     {item.giftWrap && <div className="text-[10px] text-amber-600">+ Gift Wrapping</div>}
                   </td>
                   <td className="py-2.5 px-2 text-center font-bold text-slate-700">{item.quantity}</td>
@@ -178,11 +178,11 @@ export default function GSTInvoice({
           {/* Footer */}
           <div className="border-t border-slate-200 pt-4 space-y-2">
             <div className="text-[10px] text-slate-500 leading-relaxed">
-              <strong>Note:</strong> This is a computer-generated invoice. Prices are inclusive of GST (18%). HSN Code 9503 applies to toys and games.
-              For any queries, contact us at royalcrown.fgt@gmail.com or WhatsApp +91 91122 70222.
+              <strong>Note:</strong> This is a computer-generated invoice. Prices are inclusive of GST (18%). HSN Code 9506 applies to sports equipment and accessories.
+              For any queries, contact us at moryasportsbadlapur@gmail.com or WhatsApp +91 81048 12757.
             </div>
             <div className="text-center text-[10px] font-semibold text-slate-400">
-              Thank you for shopping at Royal Crown, Badlapur! 👑
+              Thank you for shopping at Morya Sports, Badlapur! 🏆
             </div>
           </div>
 

@@ -20,7 +20,7 @@ export default function BlogDetailPage({ params }: PageProps) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-20 text-center">
         <h1 className="text-2xl font-bold text-[var(--foreground)]">Article Not Found</h1>
-        <p className="text-[var(--muted)] mt-2">The parenting guide you are looking for does not exist or has been removed.</p>
+        <p className="text-[var(--muted)] mt-2">The article you are looking for does not exist or has been removed.</p>
         <Link href="/blog" className="inline-block mt-6 px-6 py-2.5 bg-primary text-white rounded-xl font-bold">
           Back to Blog List
         </Link>
@@ -78,14 +78,14 @@ export default function BlogDetailPage({ params }: PageProps) {
 
       {/* CTA Box */}
       <div className="border border-[var(--border)] bg-[var(--card)] p-6 rounded-3xl text-center space-y-4 card-shadow mt-12">
-        <h3 className="font-poppins font-bold text-base text-[var(--foreground)]">Looking for high-quality toys in Badlapur?</h3>
+        <h3 className="font-poppins font-bold text-base text-[var(--foreground)]">Looking for high-quality sports gear in Badlapur?</h3>
         <p className="text-xs text-[var(--muted)] leading-relaxed max-w-md mx-auto">We stock all featured items mentioned in our guides. Visit our store or explore our shop catalog online!</p>
         
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link href="/shop" className="px-6 py-2.5 bg-primary text-white text-xs font-bold rounded-xl shadow cursor-pointer">
-            Explore Toys Catalog
+            Explore Sports Catalog
           </Link>
-          <a href="https://wa.me/919730044342" target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 border border-success text-success text-xs font-bold rounded-xl transition-all cursor-pointer">
+          <a href="https://wa.me/918104812757" target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 border border-success text-success text-xs font-bold rounded-xl transition-all cursor-pointer">
             Chat on WhatsApp
           </a>
         </div>
