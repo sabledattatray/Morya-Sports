@@ -133,7 +133,7 @@ function ShopContent() {
           <span className="text-[var(--foreground)]">Shop</span>
         </div>
         <h1 className="text-3xl font-poppins font-black text-[var(--foreground)] tracking-tight">Shop All Products</h1>
-        <p className="text-xs text-[var(--muted)]">Explore premium collections and find the perfect gift</p>
+        <p className="text-xs text-[var(--muted)]">Explore premium collections and find the perfect sports gear</p>
       </div>
 
       {/* Grid structure: Sidebar + Catalog */}
@@ -193,14 +193,10 @@ function ShopContent() {
               onChange={(e) => setSelectedAge(e.target.value)}
               className="w-full py-2 px-3 rounded-xl border border-[var(--border)] bg-[var(--background)] text-sm focus:outline-none"
             >
-              <option value="all">All Ages</option>
-              <option value="0-12">0-12 Months</option>
-              <option value="1-3">1-3 Years</option>
-              <option value="3-5">3-5 Years</option>
-              <option value="6-8">6-8 Years</option>
-              <option value="8-12">8-12 Years</option>
-              <option value="12+">12+ Years</option>
-              <option value="all-ages">All Family</option>
+              <option value="all">Any Player Group</option>
+              <option value="children">Kids & Juniors</option>
+              <option value="adults">Adults & Seniors</option>
+              <option value="all ages">All Players</option>
             </select>
           </div>
 
